@@ -1,0 +1,12 @@
+.button-blue {
+  border-radius: 10px;
+  color: white;
+  background-color: var(--blue-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-blue:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,8 @@
+Đăng kí học phần
+Đăng nhập
+
+Mã sinh viên, Mật khẩu,
+
+Vui lòng nhập đầy đủ thông tin.
+
+Mã số sinh viên hoặc mật khẩu không đúng.

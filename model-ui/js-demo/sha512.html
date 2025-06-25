@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sha512</title>
+</head>
+<body>
+    <script>
+        async function sha512Hash(password) {
+            let buf = await crypto.subtle
+                .digest("SHA-512",
+                    new TextEncoder("utf-8")
+                        .encode(password.trim()));
+            return Array.prototype.map.call(new Uint8Array(buf),
+                x => (('00' + x.toString(16)).slice(-2)))
+                .join('');
+        }
+        
+        async function run() {
+            let passwordHashed = await sha512Hash('1234');
+            console.log('Hash sha512:',passwordHashed);
+        }
+
+        run();
+        
+
+    </script>
+</body>
+</html>
