@@ -1,22 +1,23 @@
 <script>
-import './register-courses.scss';
+import './information-page.scss';
 import RouterManagement from "@/routers/RouterManagement.js";
-
 export default {
-  name: "RegisterCourses",
+  name: "InformationPage",
 
   components: {
 
   },
 
   data() {
-    return  {
+    return {
 
     }
   },
 
   created() {
-    this.saveRouterPath(this.getRoute());
+    this.saveRouterPath(
+        this.getRoute()
+    );
   },
 
   mounted() {

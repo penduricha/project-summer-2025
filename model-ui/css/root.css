@@ -19,6 +19,10 @@ body {
   /*  cac ma mau va style khac*/
   --blue-color: #0069d9;
   --blue-footer: #45a0e9;
+  --blue-card: #4eb0ff;
+  --orange-log-out: #eb7b21;
+  --blue-text-nav: #4aa4e7;
+  --blue-text-title: #0f70bf;
 }
 
 .cursor-pointer {

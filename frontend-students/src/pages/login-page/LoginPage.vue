@@ -7,6 +7,7 @@ import TextInvalid from "@/components/span/TextInvalid.vue";
 import PasswordManagement from "@/manage-data/PasswordManagement.js";
 import StudentLocalStorage from "@/local-storage/StudentLocalStorage.js";
 import {StudentAccount} from "@/models/StudentAccount.js";
+import StudentDao from "@/daos/StudentDao.js";
 
 export default {
   name: "LoginPage",
@@ -76,6 +77,8 @@ export default {
     },
 
     async fetchAccountStudent(studentID, password) {
+      return await StudentDao
+          .getStudentIDAndPassword(studentID, password);
 
     },
 
@@ -110,13 +113,16 @@ export default {
             this.stopLoadButtonLogin();
           } else {
             //save remember me
+            this.validateLogin = null;
             if(this.rememberMe === true) {
               this.saveDataInputToLocalStorage();
+            } else {
+              this.removeDateInputFromLocalStorage();
             }
             //save student id to local storage
-
+            console.log('Login successfully');
             //navigateToRegisterCoursesPage()
-
+            this.stopLoadButtonLogin();
           }
         } catch(error) {
           this.validateLogin = error;
@@ -126,11 +132,18 @@ export default {
       //Mã số sinh viên hoặc mật khẩu không đúng.
     },
 
-    saveDataInputToLocalStorage() {
+    removeDateInputFromLocalStorage() {
       const studentLocalStorage = new StudentLocalStorage();
-      studentLocalStorage.saveLocalStorageRememberMe(
-          this.studentID.trim(),
-          this.password.trim());
+      studentLocalStorage.removeLocalStorageRememberMe();
+    },
+
+    saveDataInputToLocalStorage() {
+      if(this.studentID && this.password) {
+        const studentLocalStorage = new StudentLocalStorage();
+        studentLocalStorage.saveLocalStorageRememberMe(
+            this.studentID.trim(),
+            this.password.trim());
+      }
     },
 
     getStatusCheckBoxRememberMe() {
@@ -139,7 +152,11 @@ export default {
       const studentLocalStorage = new StudentLocalStorage();
       let studentFetched = studentLocalStorage
           .getLocalStorageRememberMe();
-      if(!studentFetched) {
+      console.log('Student fetched from local storage remember me:', studentFetched);
+      if (!studentFetched || (
+          typeof studentFetched === 'object'
+          && Object.keys(studentFetched).length === 0))
+      {
         this.rememberMe = false;
       } else {
         this.rememberMe = true;
@@ -159,7 +176,9 @@ export default {
     }
   },
 
-  computed: {},
+  computed: {
+
+  },
 }
 </script>
 

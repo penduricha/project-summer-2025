@@ -4,7 +4,7 @@ export default {
   props: {
     textSpan: {
       type: String,
-      default: '',
+      default: null,
       required: true
     }
   }
