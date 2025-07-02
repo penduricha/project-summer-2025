@@ -61,7 +61,7 @@ export default {
     setInputStudentID() {
       // Chỉ cho phép các ký tự số
       this.studentID = this.studentID.replace(/[^0-9]/g, '');
-      if(!this.studentID){
+      if (!this.studentID) {
         this.validateLogin = null;
       } else {
         this.validateLogin = null;
@@ -69,7 +69,7 @@ export default {
     },
 
     setInputPassword() {
-      if(this.password){
+      if (this.password) {
         this.validateLogin = null;
       } else {
         this.validateLogin = null;
@@ -84,6 +84,23 @@ export default {
 
     navigateToRegisterCoursesPage() {
       //save path to local storage
+      const routerManagement = new RouterManagement();
+      const studentLocalStorage = new StudentLocalStorage();
+
+      const routerPathToSave = '/information-student';
+      routerManagement.savePath_To_LocalStorage(routerPathToSave);
+
+      //save student ID
+      studentLocalStorage.setStudentIDToLocalStorage(this.studentID);
+
+      this.$router.replace({
+        path: routerPathToSave,
+        // query: {
+        // }
+      }).catch((error) => {
+        console.error('Error navigating :', error);
+        alert(error);
+      });
     },
 
     loadButtonLogin() {
@@ -104,41 +121,36 @@ export default {
         this.loadButtonLogin();
         const passwordManagement = new PasswordManagement(this.password.trim());
         let passwordHashed = await passwordManagement.sha512Hash();
-        try {
-          let studentFetched = await this.fetchAccountStudent(
-              this.studentID.trim(),
-              passwordHashed);
-          if(!studentFetched) {
-            this.validateLogin = 'Mã số sinh viên hoặc mật khẩu không đúng.';
-            this.stopLoadButtonLogin();
+        let studentFetched = await this.fetchAccountStudent(
+            this.studentID.trim(),
+            passwordHashed);
+        if (!studentFetched) {
+          this.validateLogin = 'Mã số sinh viên hoặc mật khẩu không đúng.';
+          this.stopLoadButtonLogin();
+        } else {
+          //save remember me
+          this.validateLogin = null;
+          if (this.rememberMe === true) {
+            this.saveDataInputToLocalStorage();
           } else {
-            //save remember me
-            this.validateLogin = null;
-            if(this.rememberMe === true) {
-              this.saveDataInputToLocalStorage();
-            } else {
-              this.removeDateInputFromLocalStorage();
-            }
-            //save student id to local storage
-            console.log('Login successfully');
-            //navigateToRegisterCoursesPage()
-            this.stopLoadButtonLogin();
+            this.removeDataInputFromLocalStorage();
           }
-        } catch(error) {
-          this.validateLogin = error;
+          //save student id to local storage
+          console.log('Login successfully');
+          this.navigateToRegisterCoursesPage();
           this.stopLoadButtonLogin();
         }
       }
       //Mã số sinh viên hoặc mật khẩu không đúng.
     },
 
-    removeDateInputFromLocalStorage() {
+    removeDataInputFromLocalStorage() {
       const studentLocalStorage = new StudentLocalStorage();
       studentLocalStorage.removeLocalStorageRememberMe();
     },
 
     saveDataInputToLocalStorage() {
-      if(this.studentID && this.password) {
+      if (this.studentID && this.password) {
         const studentLocalStorage = new StudentLocalStorage();
         studentLocalStorage.saveLocalStorageRememberMe(
             this.studentID.trim(),
@@ -155,8 +167,7 @@ export default {
       console.log('Student fetched from local storage remember me:', studentFetched);
       if (!studentFetched || (
           typeof studentFetched === 'object'
-          && Object.keys(studentFetched).length === 0))
-      {
+          && Object.keys(studentFetched).length === 0)) {
         this.rememberMe = false;
       } else {
         this.rememberMe = true;
@@ -165,7 +176,7 @@ export default {
     },
 
     setDataInputFromLocalStorage(studentFetched) {
-      if(studentFetched) {
+      if (studentFetched) {
         let studentID = studentFetched.studentID;
         let password = studentFetched.password;
         const studentAccount = new StudentAccount(studentID, password);
@@ -176,9 +187,7 @@ export default {
     }
   },
 
-  computed: {
-
-  },
+  computed: {},
 }
 </script>
 

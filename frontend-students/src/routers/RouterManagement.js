@@ -53,7 +53,8 @@ export default class RouterManagement {
     }
 
     getPath_From_LocalStorage(){
-        const routerPath = localStorage.getItem(this.getVariableRouterPathLocalStorage());
+        const routerPath = localStorage
+            .getItem(this.getVariableRouterPathLocalStorage());
         return routerPath || null;
     }
 }

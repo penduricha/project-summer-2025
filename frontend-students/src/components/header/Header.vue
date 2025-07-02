@@ -1,13 +1,20 @@
 <script>
 import './header.scss';
+import '../../assets/main-scss/theme-color.scss';
 
 export default {
-  name: "Header"
+  name: "Header",
+
 }
 </script>
 
 <template>
-
+  <header>
+    <img src="../../assets/images/banner-iuh-register-courses.png"
+         alt="banner iuh"
+         class="image-banner-iuh"
+    >
+  </header>
 </template>
 
 <style scoped lang="scss">

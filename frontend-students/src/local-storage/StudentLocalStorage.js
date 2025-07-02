@@ -114,7 +114,7 @@ export default class StudentLocalStorage {
     }
 
     //save studentID
-    setStudentIDLocalStorage(studentID) {
+    setStudentIDToLocalStorage(studentID) {
         if (studentID) {
             localStorage.setItem(
                 this.getStudentIDLocalStorageName()
@@ -132,8 +132,21 @@ export default class StudentLocalStorage {
         if (studentID) {
             return studentID;
         } else {
-            console.error('Student local storage is empty.');
+            console.error('Student ID local storage is empty.');
             return null;
+        }
+    }
+
+    removeStudentIDFromLocalStorage() {
+        let student = localStorage.getItem(
+            this.getStudentIDLocalStorageName()
+        );
+        if (student) {
+            localStorage.removeItem(
+                this.getStudentIDLocalStorageName()
+            );
+        } else {
+            console.error('Student ID local storage is empty.');
         }
     }
 }
