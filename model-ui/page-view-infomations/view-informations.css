@@ -132,7 +132,7 @@ header {
     opacity: 0.8;
 }
 
-.div-detail-informations {
+.div-detail-information {
     border-left: solid 4px var(--blue-card);
     flex-direction: column;
 }
@@ -147,7 +147,7 @@ header {
     display: flex;
 }
 
-.div-text-detail-informations {
+.div-text-detail-information {
     flex: 1;
     height: 100%;
     display: flex;
@@ -156,7 +156,7 @@ header {
     gap: 0.5rem;
 }
 
-.text-detail-informations {
+.text-detail-information {
     font-size: 15px;
 }
 
@@ -219,7 +219,7 @@ ul {
         width: 21.25rem;
     }
 
-    .div-detail-informations {
+    .div-detail-information {
         justify-content: start;
         align-items: center;
     }
@@ -232,12 +232,12 @@ ul {
         gap: 0.5rem;
     }
 
-    .div-text-detail-informations {
+    .div-text-detail-information {
         flex: 1;
         justify-content: end;
     }
 
-    .div-text-detail-informations-flex-reponsive {
+    .div-text-detail-information-flex-reponsive {
         justify-content: start;
         
     }
@@ -283,7 +283,7 @@ ul {
         width: 36.25rem;
     }
 
-    .div-detail-informations {
+    .div-detail-information {
         justify-content: start;
         align-items: center;
     }
@@ -297,12 +297,12 @@ ul {
         gap: 0.5rem;
     }
 
-    .div-text-detail-informations {
+    .div-text-detail-information {
         flex: 1;
         justify-content: end;
     }
 
-    .div-text-detail-informations-flex-reponsive {
+    .div-text-detail-information-flex-reponsive {
         justify-content: start;
     }
 }

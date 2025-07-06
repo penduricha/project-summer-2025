@@ -38,6 +38,24 @@ export default {
         alert(error);
       });
     },
+
+    handleNavigatePersonalInformation() {
+      const studentLocalStorage = new StudentLocalStorage();
+      studentLocalStorage.removeStudentIDFromLocalStorage();
+      const path = '/information-student';
+      this.$router.replace({
+        path: path,
+        // query: {
+        // }
+      }).catch((error) => {
+        console.error('Error navigating :', error);
+        alert(error);
+      });
+    },
+
+    handleNavigateListSubjects(){
+
+    }
   },
 
   computed: {
@@ -66,19 +84,22 @@ export default {
     <nav class="nav-bar-items">
       <ul>
         <li>
-          <a href="" class="text-nav">Thông tin cá nhân</a>
+          <a href="" class="text-nav" @click.prevent="handleNavigatePersonalInformation()">Thông tin cá nhân</a>
         </li>
         <li>
           <a href="" class="text-nav">Đăng kí học phần</a>
         </li>
         <li>
-          <a href="" class="text-nav">Chương trình khung</a>
+          <a href="" class="text-nav" @click.prevent="handleNavigateListSubjects()">Chương trình khung</a>
         </li>
         <li>
           <a href="" class="text-nav">Lịch học</a>
         </li>
         <li>
           <a href="" class="text-nav">Học phí</a>
+        </li>
+        <li>
+          <a href="" class="text-nav">Điểm học phần</a>
         </li>
       </ul>
     </nav>

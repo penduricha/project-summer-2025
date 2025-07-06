@@ -23,6 +23,8 @@ body {
   --orange-log-out: #eb7b21;
   --blue-text-nav: #4aa4e7;
   --blue-text-title: #0f70bf;
+  --blue-row-merged-1: #0abde3;
+  --blue-row-merged-2: #daefff;
 }
 
 .cursor-pointer {

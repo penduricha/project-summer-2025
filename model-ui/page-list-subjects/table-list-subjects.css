@@ -1,0 +1,17 @@
+.view-box-table {
+    width: 75rem;
+    border: solid 1px grey;
+    border-top: none;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.text-title-dkhp {
+    color: var(--blue-text-title);
+    font-size: 18px;
+    font-weight: bold;
+}
