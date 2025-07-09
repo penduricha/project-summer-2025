@@ -1,0 +1,22 @@
+.section-style-list-subjects {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1223px) {
+
+}
+
+/* Styles for larger screens */
+@media (min-width: 1224px) {}
+
+/*khi trinh duyet dark*/
+@media (prefers-color-scheme: dark) {}

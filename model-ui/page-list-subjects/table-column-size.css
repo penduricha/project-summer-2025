@@ -1,0 +1,32 @@
+.col-1 {
+    width: 6.67%;
+}
+.col-2 {
+    width: 13.33%;
+}
+.col-3 {
+    width: 26.67%;
+}
+.col-4 {
+    width: 26.67%;
+}
+.col-5 {
+    width: 6.67%;
+}
+.col-6 {
+    width: 6.67%;
+}
+.col-7 {
+    width: 6.67%;
+}
+.col-8 {
+    width: 6.67%;
+}
+
+.cel-font-size-16 {
+    font-size: 16px;
+}
+
+.border-bottom-blue {
+    border-bottom: 1px solid var(--blue-row-merged-1);
+}

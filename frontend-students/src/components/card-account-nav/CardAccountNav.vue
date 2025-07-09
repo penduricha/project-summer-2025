@@ -40,8 +40,6 @@ export default {
     },
 
     handleNavigatePersonalInformation() {
-      const studentLocalStorage = new StudentLocalStorage();
-      studentLocalStorage.removeStudentIDFromLocalStorage();
       const path = '/information-student';
       this.$router.replace({
         path: path,
@@ -54,7 +52,15 @@ export default {
     },
 
     handleNavigateListSubjects(){
-
+      const path = '/list-courses';
+      this.$router.replace({
+        path: path,
+        // query: {
+        // }
+      }).catch((error) => {
+        console.error('Error navigating :', error);
+        alert(error);
+      });
     }
   },
 
@@ -84,13 +90,17 @@ export default {
     <nav class="nav-bar-items">
       <ul>
         <li>
-          <a href="" class="text-nav" @click.prevent="handleNavigatePersonalInformation()">Thông tin cá nhân</a>
+          <a href="" class="text-nav"
+             @click.prevent="handleNavigatePersonalInformation()"
+          >Thông tin cá nhân</a>
         </li>
         <li>
           <a href="" class="text-nav">Đăng kí học phần</a>
         </li>
         <li>
-          <a href="" class="text-nav" @click.prevent="handleNavigateListSubjects()">Chương trình khung</a>
+          <a href="" class="text-nav"
+             @click.prevent="handleNavigateListSubjects()"
+          >Chương trình khung</a>
         </li>
         <li>
           <a href="" class="text-nav">Lịch học</a>

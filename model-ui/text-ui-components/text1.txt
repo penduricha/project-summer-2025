@@ -6,3 +6,8 @@ Mã sinh viên, Mật khẩu,
 Vui lòng nhập đầy đủ thông tin.
 
 Mã số sinh viên hoặc mật khẩu không đúng.
+
+Kĩ thuật lập trình (C program)
+Mạng máy tính
+Xác suất thống kê và ứng dụng bằng python
+Quản lí dự án trong cntt (học github, jira, trello)

@@ -28,7 +28,7 @@ export default {
   },
 
   mounted() {
-
+    this.setTitlePage();
   },
 
   data() {
@@ -43,6 +43,11 @@ export default {
   },
 
   methods: {
+
+    setTitlePage() {
+      document.title = 'Đăng nhập';
+    },
+
     getRoute() {
       //ở đây có props thì phải thêm path của props
       return this.$route.path;
