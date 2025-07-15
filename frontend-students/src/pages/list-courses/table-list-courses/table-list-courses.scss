@@ -26,13 +26,6 @@
 
 .table-list-subjects {
   width: 100%;
-  height: 10rem;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  text-align: center;
 }
 
 .table-header-list-subjects {
@@ -107,9 +100,9 @@ td {
 }
 
 /*apply scss logic*/
-.row-item-subject-result {
-  background-color: var(--grey-result);
-}
+//.row-item-subject-studying {
+//  background-color: var(--grey-result);
+//}
 
 /*apply scss logic*/
 .style-icon-pass-fail {

@@ -1,12 +1,15 @@
 <script>
 import './register-courses.scss';
 import RouterManagement from "@/routers/RouterManagement.js";
+import Header from "@/components/header/Header.vue";
+import Footer from "@/components/footer/Footer.vue";
 
 export default {
   name: "RegisterCourses",
 
   components: {
-
+    Header,
+    Footer,
   },
 
   data() {
@@ -46,7 +49,9 @@ export default {
 </script>
 
 <template>
+  <Header/>
 
+  <Footer/>
 </template>
 
 <style scoped lang="scss">

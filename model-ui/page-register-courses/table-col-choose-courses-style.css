@@ -1,0 +1,74 @@
+th,
+td {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header-choose-register-course {
+    height: 2.5rem;
+    background-color: var(--blue-color);
+    color: white;
+}
+
+.cell-header-choose-register-course {
+    border: 1px solid var(--blue-row-merged-1);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.row-choose-register-course {
+    height: 2.5rem;
+    color: black;
+}
+
+.cell-choose-register-course {
+    border: 1px solid var(--blue-row-merged-1);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.style-icon-compulsory-sub {
+    object-fit: contain;
+    width: auto;
+    height: 1.25rem;
+}
+
+.col-1 {
+    width: 8.5%;
+}
+
+/* 2/16 */
+.col-2 {
+    width: 4.25%;
+}
+
+/* 1/16 */
+.col-3 {
+    width: 12.5%;
+}
+
+/* 2/16 */
+.col-4 {
+    width: 30%;
+}
+
+/* 4/16 */
+.col-5 {
+    width: 6.25%;
+}
+
+/* 1/16 */
+.col-6 {
+    width: 8.5%;
+}
+
+/* 2/16 */
+.col-7 {
+    width: 30%;
+}
+
+/* 4/16 */

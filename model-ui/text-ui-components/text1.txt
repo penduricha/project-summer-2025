@@ -11,3 +11,14 @@ Kĩ thuật lập trình (C program)
 Mạng máy tính
 Xác suất thống kê và ứng dụng bằng python
 Quản lí dự án trong cntt (học github, jira, trello)
+
+Kinh tế chính trị Mác - Lênin
+Chủ nghĩa xã hội khoa học
+Tư tưởng Hồ Chí Minh
+Đại số tuyến tính
+Anh văn 1
+
+Cấu trúc rời rạc
+Cấu trúc dữ liệu và giải thuật
+Hệ cơ sở dữ liệu 
+Phương pháp lập trình hướng đối tượng

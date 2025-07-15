@@ -1,0 +1,26 @@
+/*apply scss logic*/
+.row-item-subject-studying {
+  background-color: var(--grey-result);
+}
+
+
+//.border-color-button-choose {
+//  &.border-choose {
+//    border: solid #FE0000;
+//  }
+//
+//  &.border-no-choose {
+//    border: none;
+//  }
+//}
+/* scss cho trạng thái môn đang
+hoặc đã hoặc và môn chưa học*/
+.option-background-row {
+  &.row-item-subject-studying{
+    background-color: var(--grey-result);
+  }
+
+  &.row-item-subject-no-study{
+    background-color: transparent;
+  }
+}
