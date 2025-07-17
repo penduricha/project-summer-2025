@@ -16,6 +16,14 @@ export default {
 
   mounted() {
 
+  },
+
+  beforeDestroy() {
+
+  },
+
+  computed: {
+
   }
 }
 </script>

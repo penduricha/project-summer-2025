@@ -1,0 +1,23 @@
+.table-header-list-details-course-to-register {
+    height: 2.5rem;
+    background-color: var(--blue-color);
+    color: white;
+}
+
+.cell-header-list-details-course-to-register {
+    border: 1px solid var(--blue-row-merged-1);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.row-choose-details-to-register {
+    height: 2.5rem;
+    color: black;
+}
+
+.cell-choose-details-to-register {
+    border: 1px solid var(--blue-row-merged-1);
+    font-size: 16px;
+    font-weight: normal;
+}
+

@@ -43,17 +43,25 @@
 
 .table-choose-register-course {
     width: 73rem;
-    height: 4rem;
 }
 
-.view-list-details-courses-to-register {
+.view-list-details-course-to-register {
     width: 75rem;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    height: 5rem;
-    border: solid;
     gap: 1rem;
+    flex-direction: column;
+}
+
+.view-list-information-course-to-register {
+    width: 75rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    height: 10rem;
     border: solid;
 }
 
@@ -64,6 +72,66 @@
     align-items: center;
     height: 5rem;
     border: solid;
+    gap: 1rem;
+}
+
+.view-header-list-details-course-to-register {
+    width: 75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.view-check-box-list-details-diff-calendar {
+    width: 25rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.25rem;
+}
+
+.text-title-list-details-diff-calendar {
+    font-size: 16px;
+    color: var(--red-diff-calendar);
+    font-weight: bold;
+}
+
+.checkbox-list-details-diff-calendar {
+    cursor: pointer;
+    width: auto;
+    height: 1.25rem;
+}
+
+.table-list-details-course-to-register {
+    width: 73rem;
+}
+
+.box-choose-class-pratice {
+    width: 75rem;
+    height: 3.5rem;
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-table-information-course-to-register {
+    width: 75rem;
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-information-course-to-register {
+    width: 73rem;
+    height: 4rem;
+    border: solid red;
 }
 
 @media only screen and (max-width: 767px) {
@@ -89,12 +157,53 @@
         margin-left: 1rem;
     }
 
-    .view-list-detail-courses-to-register {
+    .table-list-details-course-to-register {
+        margin-left: 1rem;
+    }
+
+    .view-list-details-course-to-register {
         width: 23.25rem;
+        align-items: start;
+        overflow-x: scroll;
     }
 
     .view-list-courses-registered {
         width: 23.25rem;
+        align-items: start;
+        overflow-x: scroll;
+    }
+
+    .view-header-list-details-course-to-register {
+        width: 23.25rem;
+        flex-direction: column;
+    }
+
+    .view-header-list-details-course-to-register {
+        width: 23.25rem;
+        height: 5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .view-check-box-list-details-diff-calendar {
+        width: 23.25rem;
+    }
+
+    .view-list-information-course-to-register {
+        width: 23.25rem;
+    }
+
+    .box-choose-class-pratice {
+        width: 23.25rem;
+    }
+
+    .view-table-information-course-to-register {
+        width: 23.25rem;
+        overflow-x: scroll;
+    }
+
+    .table-information-course-to-register {
+        margin-left: 1rem;
     }
 }
 
@@ -121,11 +230,52 @@
         margin-left: 1rem;
     }
 
-    .view-list-detail-courses-to-register {
+    .table-list-details-course-to-register {
+        margin-left: 1rem;
+    }
+
+    .view-list-details-course-to-register {
         width: 38.25rem;
+        align-items: start;
+        overflow-x: scroll;
     }
 
     .view-list-courses-registered {
         width: 38.25rem;
+        align-items: start;
+        overflow-x: scroll;
+    }
+
+    .view-header-list-details-course-to-register {
+        width: 38.25rem;
+        flex-direction: column;
+    }
+
+    .view-header-list-details-course-to-register {
+        width: 38.25rem;
+        height: 5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .view-check-box-list-details-diff-calendar {
+        width: 38.25rem;
+    }
+
+    .view-list-information-course-to-register {
+        width: 38.25rem;
+    }
+
+    .box-choose-class-pratice {
+        width: 38.25rem;
+    }
+
+    .view-table-information-course-to-register {
+        width: 38.25rem;
+        overflow-x: scroll;
+    }
+
+    .table-information-course-to-register {
+        margin-left: 1rem;
     }
 }

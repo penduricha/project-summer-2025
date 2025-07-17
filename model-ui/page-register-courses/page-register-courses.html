@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./register-courses.css">
     <link rel="stylesheet" href="./table-col-choose-courses-style.css">
     <link rel="stylesheet" href="./table-col-details-course-style.css">
+    <link rel="stylesheet" href="./table-col-info-course-style.css">
 </head>
 
 <body>
@@ -72,7 +73,9 @@
                     </thead>
                     <tbody>
                         <tr class="row-choose-register-course">
-                            <td class="cell-choose-register-course col-1"></td>
+                            <td class="cell-choose-register-course col-1">
+                                <input type="radio" class="radio-choose">
+                            </td>
                             <td class="cell-choose-register-course col-2">1</td>
                             <td class="cell-choose-register-course col-3">2101405</td>
                             <td class="cell-choose-register-course col-4">Kĩ thuật lập trình</td>
@@ -84,7 +87,9 @@
                             <td class="cell-choose-register-course col-7">Nhập môn lập trình</td>
                         </tr>
                         <tr class="row-choose-register-course">
-                            <td class="cell-choose-register-course col-1"></td>
+                            <td class="cell-choose-register-course col-1">
+                                <input type="radio" class="radio-choose">
+                            </td>
                             <td class="cell-choose-register-course col-2">2</td>
                             <td class="cell-choose-register-course col-3">2101435</td>
                             <td class="cell-choose-register-course col-4">Mạng máy tính</td>
@@ -99,6 +104,71 @@
                 </table>
             </div>
             <div class="view-list-details-course-to-register">
+                <div class="view-header-list-details-course-to-register">
+                    <span class="text-title-to-register">DANH SÁCH CÁC LỚP HỌC PHẦN ĐĂNG KÝ</span>
+                    <div class="view-check-box-list-details-diff-calendar">
+                        <input type="checkbox" class="checkbox-list-details-diff-calendar">
+                        <span class="text-title-list-details-diff-calendar">HIỂN THỊ LỚP HỌC KHÔNG TRÙNG LỊCH</span>
+                    </div>
+                </div>
+                <div class="view-section-list-details-course-to-register">
+                    <table class="table-list-details-course-to-register">
+                        <thead>
+                            <tr class="table-header-list-details-course-to-register">
+                                <th class="cell-header-list-details-course-to-register col-1">Chọn lớp</th>
+                                <th class="cell-header-list-details-course-to-register col-2">STT</th>
+                                <th class="cell-header-list-details-course-to-register col-3">Lớp dự kiến</th>
+                                <th class="cell-header-list-details-course-to-register col-4">Tên lớp học phần</th>
+                                <th class="cell-header-list-details-course-to-register col-5">Sĩ số tối đa</th>
+                                <th class="cell-header-list-details-course-to-register col-6">Đã đăng kí</th>
+                                <th class="cell-header-list-details-course-to-register col-7">Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row-choose-details-to-register">
+                                <td class="cell-choose-details-to-register">
+                                    <input type="radio" class="radio-choose">
+                                </td>
+                                <td class="cell-choose-details-to-register">1</td>
+                                <td class="cell-choose-details-to-register">DHKTPM17ATT</td>
+                                <td class="cell-choose-details-to-register">Kĩ thuật lập trình</td>
+                                <td class="cell-choose-details-to-register">45</td>
+                                <td class="cell-choose-details-to-register">45</td>
+                                <td class="cell-choose-details-to-register">Chờ sinh viên đăng kí</td>
+                            </tr>
+                            <tr class="row-choose-details-to-register">
+                                <td class="cell-choose-details-to-register">
+                                    <input type="radio" class="radio-choose">
+                                </td>
+                                <td class="cell-choose-details-to-register">2</td>
+                                <td class="cell-choose-details-to-register">DHKTPM17BTT</td>
+                                <td class="cell-choose-details-to-register">Kĩ thuật lập trình</td>
+                                <td class="cell-choose-details-to-register">45</td>
+                                <td class="cell-choose-details-to-register">40</td>
+                                <td class="cell-choose-details-to-register">Chờ sinh viên đăng kí</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="view-list-information-course-to-register">
+                <div class="box-choose-class-pratice">
+
+                </div>
+                <div class="view-table-information-course-to-register">
+                    <table class="table-information-course-to-register">
+                        <thead>
+                            <tr class="row-header-information-course-to-register">
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row-choose-information-course-to-register">
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
             <div class="view-list-courses-registered">

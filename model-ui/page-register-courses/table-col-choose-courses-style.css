@@ -37,8 +37,14 @@ table {
     height: 1.25rem;
 }
 
+.radio-choose {
+    width: 1.25rem;
+    height: auto;
+    cursor: pointer;
+}
+
 .col-1 {
-    width: 8.5%;
+    width: 7.5%;
 }
 
 /* 2/16 */
@@ -48,7 +54,7 @@ table {
 
 /* 1/16 */
 .col-3 {
-    width: 12.5%;
+    width: 13.5%;
 }
 
 /* 2/16 */
