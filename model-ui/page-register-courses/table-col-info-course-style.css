@@ -1,0 +1,42 @@
+.table-header-information-course-to-register {
+  height: 2.5rem;
+  background-color: var(--blue-color);
+  color: white;
+}
+
+.cell-header-information-course-to-register {
+  border: 1px solid var(--blue-row-merged-1);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.row-choose-information-course-to-register {
+  height: 2.5rem;
+  color: black;
+}
+
+.cell-choose-information-course-to-register {
+  border: 1px solid var(--blue-row-merged-1);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.col-info-course-1,
+.col-info-course-3,
+.col-info-course-4,
+.col-info-course-8,
+.col-info-course-9 {
+  width: 7.69%;
+}
+
+.col-info-course-2,
+.col-info-course-5,
+.col-info-course-6,
+.col-info-course-7 {
+  width: 15.38%;
+}
+
+.cursor-choose {
+  cursor: pointer;
+}
+

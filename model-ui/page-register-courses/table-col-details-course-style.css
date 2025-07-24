@@ -13,6 +13,7 @@
 .row-choose-details-to-register {
     height: 2.5rem;
     color: black;
+    cursor: pointer;
 }
 
 .cell-choose-details-to-register {
@@ -20,4 +21,30 @@
     font-size: 16px;
     font-weight: normal;
 }
+
+/* size column */
+/* ti le: 1-1-2-4-2-1-1-2-2-3 */
+.col-course-registered-1,
+.col-course-registered-2,
+.col-course-registered-6,
+.col-course-registered-7 {
+  width: 5.26%;
+}
+
+.col-course-registered-3,
+.col-course-registered-5,
+.col-course-registered-8,
+.col-course-registered-9 {
+  width: 10.53%;
+}
+
+.col-course-registered-4 {
+  width: 21.05%;
+}
+
+.col-course-registered-10 {
+  width: 15.79%;
+}
+
+
 

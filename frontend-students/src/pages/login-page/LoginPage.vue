@@ -8,6 +8,7 @@ import PasswordManagement from "@/manage-data/PasswordManagement.js";
 import StudentLocalStorage from "@/local-storage/StudentLocalStorage.js";
 import {StudentAccount} from "@/models/StudentAccount.js";
 import StudentDao from "@/daos/StudentDao.js";
+// import '../../components/button/button-blue/button-blue.scss';
 
 export default {
   name: "LoginPage",
@@ -37,8 +38,11 @@ export default {
       password: null,
       validateLogin: null,
       rememberMe: false,
+
+      //btn login
       loadingButtonLogin: false,
       textButtonLogin: 'Đăng nhập',
+      disableButtonLogin: false,
     }
   },
 
@@ -110,11 +114,13 @@ export default {
 
     loadButtonLogin() {
       this.loadingButtonLogin = true;
+      this.disableButtonLogin = true;
       this.textButtonLogin = null;
     },
 
     stopLoadButtonLogin() {
       this.loadingButtonLogin = false;
+      this.disableButtonLogin = false;
       this.textButtonLogin = 'Đăng nhập';
     },
 
@@ -147,6 +153,7 @@ export default {
         }
       }
       //Mã số sinh viên hoặc mật khẩu không đúng.
+      //this.loadButtonLogin();
     },
 
     removeDataInputFromLocalStorage() {
@@ -192,7 +199,15 @@ export default {
     }
   },
 
-  computed: {},
+  computed: {
+    // setBorderColorChoose() {
+    //   return (index) => {
+    //     return (index === this.indexQuestion)
+    //         ? 'border-choose'
+    //         : 'border-no-choose';
+    //   };
+    // },
+  },
 }
 </script>
 
@@ -200,7 +215,6 @@ export default {
   <div class="container-form-login-page">
     <div class="form-login">
       <h4 class="title-login">Đăng nhập hệ thống</h4>
-
       <div class="form-floating mb-3 style-input-login">
         <input type="text" class="form-control"
                id="floatingInputStudentID"
@@ -239,6 +253,8 @@ export default {
       <ButtonBlue class="btn-login" @click="handleLoginEvent()"
                   :text-button="textButtonLogin"
                   :loading-button="loadingButtonLogin"
+                  :disable-button="disableButtonLogin"
+
       />
     </div>
   </div>

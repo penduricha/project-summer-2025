@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./table-col-choose-courses-style.css">
     <link rel="stylesheet" href="./table-col-details-course-style.css">
     <link rel="stylesheet" href="./table-col-info-course-style.css">
+    <link rel="stylesheet" href="./table-col-courses-registered.css">
 </head>
 
 <body>
@@ -152,27 +153,167 @@
                 </div>
             </div>
             <div class="view-list-information-course-to-register">
+                <!-- Chỉ hiển thị <div class="box-choose-class-pratice"> 
+                    khi môn đó có phần thực hành -->
+                <span class="text-title-to-register">THÔNG TIN LỚP HỌC PHẦN</span>
                 <div class="box-choose-class-pratice">
-
+                    <span style="font-size: 16px;">Chọn nhóm thực hành</span>
                 </div>
                 <div class="view-table-information-course-to-register">
                     <table class="table-information-course-to-register">
                         <thead>
-                            <tr class="row-header-information-course-to-register">
-                                <th></th>
+                            <tr class="table-header-information-course-to-register">
+                                <th class="cell-header-information-course-to-register col-info-course-1">STT</th>
+                                <th class="cell-header-information-course-to-register col-info-course-2">Lịch học</th>
+                                <th class="cell-header-information-course-to-register col-info-course-3">Nhóm thực hành
+                                </th>
+                                <th class="cell-header-information-course-to-register col-info-course-4">Phòng</th>
+                                <th class="cell-header-information-course-to-register col-info-course-5">Cơ sở</th>
+                                <th class="cell-header-information-course-to-register col-info-course-6">Giảng viên</th>
+                                <th class="cell-header-information-course-to-register col-info-course-7">Thời gian</th>
+                                <th class="cell-header-information-course-to-register col-info-course-8">Sĩ số tối đa
+                                </th>
+                                <th class="cell-header-information-course-to-register col-info-course-9">Đã đăng kí</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="row-choose-information-course-to-register">
-                                <td></td>
+                                <td class="cell-choose-information-course-to-register col-info-course-1">1</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-2">LT - Thứ 5
+                                    (T1-T3)</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-3"></td>
+                                <td class="cell-choose-information-course-to-register col-info-course-4">B1.03</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-5">TP Hồ Chí Minh
+                                </td>
+                                <td class="cell-choose-information-course-to-register col-info-course-6">Hồ Đắc Quán
+                                </td>
+                                <td class="cell-choose-information-course-to-register col-info-course-7">6/1/2025 -
+                                    12/5/2025</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-8">45</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-9">45</td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                             <tr class="row-choose-information-course-to-register">
+                                <td class="cell-choose-information-course-to-register col-info-course-1">2</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-2">TH - Thứ 5
+                                    (T4-T6)</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-3">1</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-4">H3.01</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-5">TP Hồ Chí Minh
+                                </td>
+                                <td class="cell-choose-information-course-to-register col-info-course-6">Hồ Đắc Quán
+                                </td>
+                                <td class="cell-choose-information-course-to-register col-info-course-7">6/1/2025 -
+                                    21/5/2025</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-8">23</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-9">23</td>
+                            </tr>
+                            <tr class="row-choose-information-course-to-register">
+                                <td class="cell-choose-information-course-to-register col-info-course-1">3</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-2">TH - Thứ 5
+                                    (T4-T6)</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-3">2</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-4">H3.01</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-5">TP Hồ Chí Minh
+                                </td>
+                                <td class="cell-choose-information-course-to-register col-info-course-6">Lê Vũ Hạo</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-7">6/1/2025 -
+                                    21/5/2025</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-8">22</td>
+                                <td class="cell-choose-information-course-to-register col-info-course-9">22</td>
+
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
-
+                <button class="style-button-register btn-register-allow">
+                    <!-- btn-register-disable or btn-register-allow-->
+                    Đăng kí môn học
+                </button>
             </div>
             <div class="view-list-courses-registered">
-
+                <span class="text-title-to-register">LỚP HỌC PHẦN ĐÃ ĐĂNG KÝ</span>
+                <div class="box-btn-print-courses-registered">
+                    <button class="btn-print-courses-registered">
+                        <svg fill="white" height="800px" width="800px" version="1.1" id="Layer_1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 512 512" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path d="M495.304,144.696h-83.478v-128C411.826,7.475,404.351,0,395.13,0H116.87c-9.22,0-16.696,7.475-16.696,16.696v128H16.696
+                                        C7.475,144.696,0,152.171,0,161.391V395.13c0,9.22,7.475,16.696,16.696,16.696h83.478v83.478c0,9.22,7.475,16.696,16.696,16.696
+                                        H395.13c9.22,0,16.696-7.475,16.696-16.696v-83.478h83.478c9.22,0,16.696-7.475,16.696-16.696V161.391
+                                        C512,152.171,504.525,144.696,495.304,144.696z M133.565,33.391h244.87v111.304h-244.87V33.391z M378.435,478.609h-244.87V311.652
+                                        h244.87V478.609z M478.609,378.435h-66.783v-83.478c0-9.22-7.475-16.696-16.696-16.696H116.87c-9.22,0-16.696,7.475-16.696,16.696
+                                        v83.478H33.391V178.087h83.478H395.13h83.478V378.435z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path d="M329.461,346.156H184.765c-9.22,0-16.696,7.475-16.696,16.696s7.475,16.696,16.696,16.696h144.696
+			                            c9.22,0,16.696-7.475,16.696-16.696S338.681,346.156,329.461,346.156z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <path d="M262.678,412.939h-77.913c-9.22,0-16.696,7.475-16.696,16.696s7.475,16.696,16.696,16.696h77.913
+			                            c9.22,0,16.696-7.475,16.696-16.696S271.899,412.939,262.678,412.939z" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <circle cx="362.852" cy="229.287" r="16.696" />
+                                </g>
+                            </g>
+                            <g>
+                                <g>
+                                    <circle cx="429.635" cy="229.287" r="16.696" />
+                                </g>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+                <table class="table-list-courses-registered">
+                    <thead>
+                        <tr class="row-header-list-courses-registered">
+                            <th class="cell-header-list-courses-registered col-course-registered-1">Thao tác</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-2">STT</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-3">Mã môn học</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-4">Tên môn học</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-5">Lớp học dự kiến</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-6">Số tín chỉ</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-7">Nhóm thực hành</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-8">Học phí</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-9">Ngày đăng kí</th>
+                            <th class="cell-header-list-courses-registered col-course-registered-10">Trạng thái lớp học phần</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-item-course-registered">
+                            <td class="cell-row-item-course-registered cursor-pointer">
+                                <img src="../img/more-options.svg" alt="more option svg" class="img-option-svg">
+                            </td>
+                            <td class="cell-row-item-course-registered">1</td>
+                            <td class="cell-row-item-course-registered">2101405</td>
+                            <td class="cell-row-item-course-registered">Kĩ thuật lập trình</td>
+                            <td class="cell-row-item-course-registered">DHKTPM17ATT</td>
+                            <td class="cell-row-item-course-registered">4</td>
+                            <td class="cell-row-item-course-registered">1</td>
+                            <td class="cell-row-item-course-registered">4.000.000</td>
+                            <td class="cell-row-item-course-registered">10/12/2025</td>
+                            <td class="cell-row-item-course-registered">Chờ sinh viên đăng ký</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="row-footer-list-courses-registered">
+                            <td colspan="10" class="cell-footer-list-courses-registered">Tổng số tín chỉ đăng kí: 6</td>
+                        </tr>
+                        <tr class="row-footer-list-courses-registered">
+                            <td colspan="10" class="cell-footer-list-courses-registered">Tổng học phí: 6.000.000</td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </div>
     </section>

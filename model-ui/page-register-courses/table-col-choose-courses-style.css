@@ -23,6 +23,7 @@ table {
 .row-choose-register-course {
     height: 2.5rem;
     color: black;
+    cursor: pointer;
 }
 
 .cell-choose-register-course {
