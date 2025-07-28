@@ -23,12 +23,18 @@ export default {
     }
   },
 
+  computed: {
 
+  },
+
+  methods: {
+
+  }
 }
 </script>
 
 <template>
-  <button>
+  <button class="button-orange">
 
   </button>
 </template>

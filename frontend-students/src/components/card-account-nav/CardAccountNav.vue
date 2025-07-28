@@ -61,6 +61,18 @@ export default {
         console.error('Error navigating :', error);
         alert(error);
       });
+    },
+
+    handleNavigateRegisterCourses() {
+      const path = '/register-courses';
+      this.$router.replace({
+        path: path,
+        // query: {
+        // }
+      }).catch((error) => {
+        console.error('Error navigating :', error);
+        alert(error);
+      });
     }
   },
 
@@ -95,7 +107,9 @@ export default {
           >Thông tin cá nhân</a>
         </li>
         <li>
-          <a href="" class="text-nav">Đăng kí học phần</a>
+          <a href="" class="text-nav"
+             @click.prevent="handleNavigateRegisterCourses()"
+          >Đăng kí học phần</a>
         </li>
         <li>
           <a href="" class="text-nav"

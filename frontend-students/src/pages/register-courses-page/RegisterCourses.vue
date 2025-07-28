@@ -3,11 +3,15 @@ import './register-courses.scss';
 import RouterManagement from "@/routers/RouterManagement.js";
 import Header from "@/components/header/Header.vue";
 import Footer from "@/components/footer/Footer.vue";
+import CardAccountNav from "@/components/card-account-nav/CardAccountNav.vue";
+import SectionRegisterCourses from "@/pages/register-courses-page/section-register-courses/SectionRegisterCourses.vue";
 
 export default {
   name: "RegisterCourses",
 
   components: {
+    SectionRegisterCourses,
+    CardAccountNav,
     Header,
     Footer,
   },
@@ -50,7 +54,10 @@ export default {
 
 <template>
   <Header/>
-
+  <section class="section-style-register-courses">
+    <CardAccountNav/>
+    <SectionRegisterCourses/>
+  </section>
   <Footer/>
 </template>
 

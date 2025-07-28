@@ -1,0 +1,105 @@
+.row-header-list-courses-registered {
+  height: 4rem;
+  background-color: var(--blue-color);
+  color: white;
+}
+
+.cell-header-list-courses-registered {
+  border: 1px solid var(--blue-row-merged-1);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.row-item-course-registered {
+  height: 3rem;
+  color: black;
+}
+
+.cell-row-item-course-registered {
+  border: 1px solid var(--blue-row-merged-1);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.img-option-svg {
+  object-fit: contain;
+  width: 1rem;
+  height: auto;
+}
+
+.row-footer-list-courses-registered {
+  height: 2.5rem;
+  background-color: var(--blue-color);
+  color: white;
+}
+
+.cell-footer-list-courses-registered {
+  text-align: right;
+  padding-right: 1rem;
+}
+
+/* size column */
+/* ti le: 1-1-2-4-2-1-1-2-2-3-1 */
+.col-course-registered-1 {
+  width: 5%;
+}
+
+.col-course-registered-2 {
+  width: 5%;
+}
+
+.col-course-registered-3 {
+  width: 10%;
+}
+
+.col-course-registered-4 {
+  width: 20%;
+}
+
+.col-course-registered-5 {
+  width: 10%;
+}
+
+.col-course-registered-6 {
+  width: 5%;
+}
+
+.col-course-registered-7 {
+  width: 5%;
+}
+
+.col-course-registered-8 {
+  width: 10%;
+}
+
+.col-course-registered-9 {
+  width: 10%;
+}
+
+.col-course-registered-10 {
+  width: 15%;
+}
+
+.col-course-registered-11 {
+  width: 5%;
+}
+
+.img-tick-x-fee {
+  object-fit: contain;
+  width: 35%;
+  height: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .cell-footer-list-courses-registered {
+    text-align: left;
+    padding-left: 5rem;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1223px) {
+  .cell-footer-list-courses-registered {
+    text-align: left;
+    padding-left: 12.5rem;
+  }
+}

@@ -1,0 +1,58 @@
+th,
+td {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header-choose-register-course {
+  height: 2.5rem;
+  background-color: var(--blue-color);
+  color: white;
+}
+
+.cell-header-choose-register-course {
+  border: 1px solid var(--blue-row-merged-1);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.row-choose-register-course {
+  height: 2.5rem;
+  color: black;
+  cursor: pointer;
+}
+
+.cell-choose-register-course {
+  border: 1px solid var(--blue-row-merged-1);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.style-icon-compulsory-sub {
+  object-fit: contain;
+  width: auto;
+  height: 1.25rem;
+}
+
+.radio-choose {
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: pointer;
+  accent-color: var(--blue-color);
+}
+
+/*2-1-2-5-2-2-5*/
+.col-choose-register-course-1 { width: 10.53%; }  /* 2/19 */
+.col-choose-register-course-2 { width: 5.26%; }   /* 1/19 */
+.col-choose-register-course-3 { width: 10.53%; }  /* 2/19 */
+.col-choose-register-course-4 { width: 26.32%; }  /* 5/19 */
+.col-choose-register-course-5 { width: 10.53%; }  /* 2/19 */
+.col-choose-register-course-6 { width: 10.53%; }  /* 2/19 */
+.col-choose-register-course-7 { width: 26.32%; }  /* 5/19 */
+
+
+/* 4/16 */
