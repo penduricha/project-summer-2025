@@ -86,8 +86,20 @@
 
 .img-tick-x-fee {
   object-fit: contain;
-  width: 35%;
-  height: auto;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.box-menu-drop-courses-registered {
+  border-radius: 0;
+}
+
+.style-btn-view-course {
+
+}
+
+.style-btn-cancel-register {
+
 }
 
 @media only screen and (max-width: 767px) {

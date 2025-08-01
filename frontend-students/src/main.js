@@ -44,7 +44,6 @@ function initPage(routers, routerPath) {
         routes: routers,
     });
     app.use(router);
-
     router.replace(routerPath).catch((error) => {
         console.error('Error navigating: ', error);
         //router.replace('/screen-404').catch(err => console.error(err));
@@ -55,26 +54,47 @@ function initPage(routers, routerPath) {
 }
 
 function execute() {
+    //duyet ko co field query path
+    let paths = routers.map(router => router.path);
+    console.log('Paths:',paths);
     const routerManagement = new RouterManagement();
     const studentLocalStorage = new StudentLocalStorage();
-    const startPagePath = '/';
+    const startPagePath = '/login';
     const checkPath_And_ID =
         routerManagement.getPath_From_LocalStorage() &&
         studentLocalStorage.getStudentID_From_LocalStorage_StudentID();
-
-    if(checkPath_And_ID && !routerManagement.getPath_From_SessionStorage()) {
-        initPage(
-            routers,
-            routerManagement.getPath_From_LocalStorage()
-        );
+    const currentPath = window.location.pathname;
+    // Lấy đường dẫn hiện tại
+    // if (currentPath === '/') {
+    //     // Nếu người dùng gõ đường dẫn chính, điều hướng đến đường dẫn từ LocalStorage
+    /* xét thêm trường hợp nếu ko trong list routers thì sẽ navigate trang 404*/
+    if (checkPath_And_ID && !routerManagement.getPath_From_SessionStorage()) {
+        // Nếu có path từ LocalStorage và không có path từ SessionStorage
+        // Điều hướng đến đường dẫn người dùng gõ
+        if(currentPath === '/') {
+            initPage(routers, routerManagement.getPath_From_LocalStorage());
+        } else {
+            initPage(routers, currentPath);
+            //duyet ds routers neu ko co thi navigate den trang 404
+        }
     } else {
-        if(!routerManagement.getPath_From_SessionStorage()) {
+        if (!routerManagement.getPath_From_SessionStorage()) {
             initPage(routers, startPagePath);
         } else {
-            initPage(
-                routers,
-                routerManagement.getPath_From_SessionStorage()
-            );
+            //viet them truong hop khi nguoi dung go
+            let pathSession = routerManagement.getPath_From_SessionStorage();
+            if(currentPath !== pathSession) {
+                routerManagement.removePath_From_LocalStorage(pathSession);
+                initPage(
+                    routers,
+                    currentPath
+                );
+            } else {
+                initPage(
+                    routers,
+                    pathSession
+                );
+            }
         }
     }
 }

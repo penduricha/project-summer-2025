@@ -8,6 +8,8 @@ import PasswordManagement from "@/manage-data/PasswordManagement.js";
 import StudentLocalStorage from "@/local-storage/StudentLocalStorage.js";
 import {StudentAccount} from "@/models/StudentAccount.js";
 import StudentDao from "@/daos/StudentDao.js";
+import Footer from "@/components/footer/Footer.vue";
+import Header from "@/components/header/Header.vue";
 // import '../../components/button/button-blue/button-blue.scss';
 
 export default {
@@ -15,8 +17,9 @@ export default {
 
   components: {
     TextInvalid,
-    ButtonBlue
-
+    ButtonBlue,
+    Header,
+    Footer,
   },
 
   beforeCreate() {
@@ -212,6 +215,7 @@ export default {
 </script>
 
 <template>
+  <Header/>
   <div class="container-form-login-page">
     <div class="form-login">
       <h4 class="title-login">Đăng nhập hệ thống</h4>
@@ -258,6 +262,7 @@ export default {
       />
     </div>
   </div>
+  <Footer/>
 </template>
 
 <style scoped lang="scss">

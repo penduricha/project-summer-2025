@@ -39,8 +39,10 @@ export default {
 </script>
 
 <template>
+<!--   -->
   <button class="button-blue" :disabled="disableButton"
-          :class="['button-blue-opacity-disabled', setOpacityBtnLogin]">
+          :class="['button-blue-opacity-disabled', setOpacityBtnLogin]"
+         >
     {{ textButton }}
     <div v-if="loadingButton" class="spinner-border text-light style-icon-spinner" role="status"/>
       <!-- <span class="sr-only">Loading...</span>-->

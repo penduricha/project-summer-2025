@@ -5,9 +5,15 @@ import './table-register-courses/table-col-courses-registered.scss';
 import './table-register-courses/table-col-details-course-style.scss';
 import './table-register-courses/table-col-info-course-style.scss';
 import './style-box-choose-register-course.scss';
+import '../../../assets/main-scss/theme-color.scss';
+import ModalConfirmCancelCourseRegistered
+  from "@/pages/register-courses-page/section-register-courses/modal-confirm-cancel-course-registered/ModalConfirmCancelCourseRegistered.vue";
+import ModalViewDetailCourseRegistered
+  from "@/pages/register-courses-page/section-register-courses/modal-view-detail-course-registered/ModalViewDetailCourseRegistered.vue";
 
 export default {
   name: "SectionRegisterCourses",
+  components: {ModalViewDetailCourseRegistered, ModalConfirmCancelCourseRegistered},
 
   data() {
     return {
@@ -27,6 +33,16 @@ export default {
 
   beforeDestroy() {
 
+  },
+
+  methods: {
+    handleSetModalViewCourse() {
+
+    },
+
+    handleOpenConfirmModal() {
+
+    },
   },
 
   computed: {}
@@ -81,7 +97,7 @@ export default {
           <td class="cell-choose-register-course col-choose-register-course-4">Kĩ thuật lập trình</td>
           <td class="cell-choose-register-course col-choose-register-course-5">4</td>
           <td class="cell-choose-register-course col-choose-register-course-6">
-            <img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick"
+            <img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick"
                  class="style-icon-compulsory-sub">
           </td>
           <td class="cell-choose-register-course col-choose-register-course-7">Nhập môn lập trình</td>
@@ -95,7 +111,7 @@ export default {
           <td class="cell-choose-register-course col-choose-register-course-4">Mạng máy tính</td>
           <td class="cell-choose-register-course col-choose-register-course-5">3</td>
           <td class="cell-choose-register-course col-choose-register-course-6">
-            <img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick"
+            <img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick"
                  class="style-icon-compulsory-sub">
           </td>
           <td class="cell-choose-register-course col-choose-register-course-7"></td>
@@ -284,6 +300,16 @@ export default {
                         </svg>
         </button>
       </div>
+      <!--      <div class="dropdown">-->
+      <!--        <button class="btn btn-secondary dropdown-toggle dropdown-menu-lg-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+      <!--          Dropdown button-->
+      <!--        </button>-->
+      <!--        <ul class="dropdown-menu">-->
+      <!--          <li><a class="dropdown-item" href="#">Action</a></li>-->
+      <!--          <li><a class="dropdown-item" href="#">Another action</a></li>-->
+      <!--          <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+      <!--        </ul>-->
+      <!--      </div>-->
       <table class="table-list-courses-registered">
         <thead>
         <tr class="row-header-list-courses-registered">
@@ -301,9 +327,29 @@ export default {
         </tr>
         </thead>
         <tbody>
-        <tr class="row-item-course-registered">
+        <tr class="row-item-course-registered dropdown">
           <td class="cell-row-item-course-registered cursor-pointer">
-            <img src="../../../assets/images/more-options.svg" alt="more option svg" class="img-option-svg">
+            <img src="../../../assets/images/more_options.svg" alt="more option svg"
+                 class="img-option-svg dropdown-toggle dropdown-menu-lg-end"
+                 type="button" data-bs-toggle="dropdown" aria-expanded="false"
+            >
+            <ul class="dropdown-menu box-menu-drop-courses-registered">
+              <li class="style-btn-view-course"
+                  @click="handleSetModalViewCourse()"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-view-detail-course-registered"
+              >
+                <a class="dropdown-item">Xem môn học</a>
+              </li>
+              <!--Neu mon đã chap nhan mo lop hoac da khoa ko dc phep huy-->
+              <li class="style-btn-cancel-register"
+                  @click="handleOpenConfirmModal()"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-cancel-course-registered"
+              >
+                <a class="dropdown-item text-danger">Hủy đăng ký</a>
+              </li>
+            </ul>
           </td>
           <td class="cell-row-item-course-registered">1</td>
           <td class="cell-row-item-course-registered">2101405</td>
@@ -315,7 +361,9 @@ export default {
           <td class="cell-row-item-course-registered">10/12/2025</td>
           <td class="cell-row-item-course-registered">Chờ sinh viên đăng ký</td>
           <td class="cell-row-item-course-registered">
-            <img src="../../../assets/images/icon-tick-x/red-x.png" alt="img x-tick" class="img-tick-x-fee">
+            <img src="../../../assets/images/icon-tick-x/red_x.png"
+                 alt="img x-tick"
+                 class="img-tick-x-fee">
           </td>
         </tr>
         </tbody>
@@ -330,14 +378,14 @@ export default {
       </table>
     </div>
   </div>
+  <modal-confirm-cancel-course-registered/>
+  <modal-view-detail-course-registered/>
 </template>
 
 <style scoped lang="scss">
 .style-svg-printer {
   object-fit: contain;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
-
-
 </style>

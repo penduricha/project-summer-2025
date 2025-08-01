@@ -1,0 +1,87 @@
+.text-title-modal-cancel-course-registered {
+  font-size: 1.15rem;
+}
+
+.style-img-exclamation-mark {
+  object-fit: contain;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-self: center;
+}
+
+.style-modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.style-div-modal {
+  border-radius: 0;
+  width: 25rem;
+}
+
+.style-modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.style-btn-confirm-cancel {
+  border-radius: 0;
+  width: 10rem;
+  height: 2.5rem;
+  color: white;
+  background-color: var(--blue-color);
+  font-size: 16px;
+}
+
+.style-btn-confirm-cancel:hover {
+  opacity: 0.8;
+}
+
+.style-btn-confirm-no-cancel {
+  border-radius: 0;
+  width: 10rem;
+  height: 2.5rem;
+  color: white;
+  background-color: var(--red-color);
+  font-size: 16px;
+}
+
+.style-btn-confirm-no-cancel:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 767px) {
+    //mobile responsive
+  .style-div-modal{
+    width: 20rem;
+  }
+
+  .style-btn-confirm-cancel{
+    width: 8rem;
+    height: 3rem;
+  }
+
+  .style-btn-confirm-no-cancel{
+    width: 8rem;
+    height: 3rem;
+  }
+
+  .style-modal-footer {
+    gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1223px) {
+
+}
+
+/* Styles for larger screens */
+@media (min-width: 1224px) {}
+
+/*khi trinh duyet dark*/
+@media (prefers-color-scheme: dark) {}

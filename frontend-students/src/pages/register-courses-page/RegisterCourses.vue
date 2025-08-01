@@ -27,7 +27,7 @@ export default {
   },
 
   mounted() {
-
+    this.setTitlePage();
   },
 
   beforeDestroy() {
@@ -38,6 +38,10 @@ export default {
     getRoute() {
       //ở đây có props thì phải thêm path của props
       return this.$route.path;
+    },
+
+    setTitlePage() {
+      document.title = 'Đăng kí học phần';
     },
 
     saveRouterPath(route) {

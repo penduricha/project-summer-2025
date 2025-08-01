@@ -10,7 +10,7 @@ export default {
 
 <template>
   <header>
-    <img src="../../assets/images/banner-iuh-register-courses.png"
+    <img src="../../assets/images/banner_iuh_register_courses.png"
          alt="banner iuh"
          class="image-banner-iuh"
     >

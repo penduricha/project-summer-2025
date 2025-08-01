@@ -117,7 +117,7 @@ export default {
           <th class="cell-table-col-subjects col-6">45</th>
           <th class="cell-table-col-subjects col-7">0</th>
           <th class="cell-table-col-subjects col-8">
-            <img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick" class="style-icon-pass-fail">
+            <img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick" class="style-icon-pass-fail">
           </th>
         </tr>
         <tr class="row-item-subject row-item-subject-studying">
@@ -130,7 +130,7 @@ export default {
           <th class="cell-table-col-subjects col-6">45</th>
           <th class="cell-table-col-subjects col-7">0</th>
           <th class="cell-table-col-subjects col-8">
-            <img src="../../../assets/images/icon-tick-x/red-x.png" alt="green tick" class="style-icon-pass-fail">
+            <img src="../../../assets/images/icon-tick-x/red_x.png" alt="green tick" class="style-icon-pass-fail">
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -184,7 +184,7 @@ export default {
           <th class="cell-table-col-subjects col-6">45</th>
           <th class="cell-table-col-subjects col-7">0</th>
           <th class="cell-table-col-subjects col-8">
-            <!--            <img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--            <img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -197,7 +197,7 @@ export default {
           <th class="cell-table-col-subjects col-6">30</th>
           <th class="cell-table-col-subjects col-7">30</th>
           <th class="cell-table-col-subjects col-8">
-            <!--            <img src="../../../assets/images/icon-tick-x/red-x.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--            <img src="../../../assets/images/icon-tick-x/red_x.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -251,7 +251,7 @@ export default {
           <th class="cell-table-col-subjects col-6">30</th>
           <th class="cell-table-col-subjects col-7">0</th>
           <th class="cell-table-col-subjects col-8">
-            <!--            <img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--            <img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -264,7 +264,7 @@ export default {
           <th class="cell-table-col-subjects col-6">30</th>
           <th class="cell-table-col-subjects col-7">0</th>
           <th class="cell-table-col-subjects col-8">
-            <!--            <img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--            <img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -277,7 +277,7 @@ export default {
           <th class="cell-table-col-subjects col-6">45</th>
           <th class="cell-table-col-subjects col-7">0</th>
           <th class="cell-table-col-subjects col-8">
-            <!--            <img src="../../../assets/images/icon-tick-x/red-x.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--            <img src="../../../assets/images/icon-tick-x/red_x.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -290,7 +290,7 @@ export default {
           <th class="cell-table-col-subjects col-6">60</th>
           <th class="cell-table-col-subjects col-7">0</th>
           <th class="cell-table-col-subjects col-8">
-            <!--            <img src="../../../assets/images/icon-tick-x/red-x.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--            <img src="../../../assets/images/icon-tick-x/red_x.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         </tbody>
@@ -331,7 +331,7 @@ export default {
           <th class="cell-table-col-subjects col-6">45</th>
           <th class="cell-table-col-subjects col-7">30</th>
           <th class="cell-table-col-subjects col-8">
-            <!--<img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--<img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -344,7 +344,7 @@ export default {
           <th class="cell-table-col-subjects col-6">30</th>
           <th class="cell-table-col-subjects col-7">30</th>
           <th class="cell-table-col-subjects col-8">
-            <!--<img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--<img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -357,7 +357,7 @@ export default {
           <th class="cell-table-col-subjects col-6">45</th>
           <th class="cell-table-col-subjects col-7">0</th>
           <th class="cell-table-col-subjects col-8">
-            <!--<img src="../../../assets/images/icon-tick-x/red-x.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--<img src="../../../assets/images/icon-tick-x/red_x.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         </tbody>
@@ -394,7 +394,7 @@ export default {
           <th class="cell-table-col-subjects col-6">0</th>
           <th class="cell-table-col-subjects col-7">60</th>
           <th class="cell-table-col-subjects col-8">
-            <!--<img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--<img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         <tr class="row-item-subject">
@@ -407,7 +407,7 @@ export default {
           <th class="cell-table-col-subjects col-6">0</th>
           <th class="cell-table-col-subjects col-7">60</th>
           <th class="cell-table-col-subjects col-8">
-            <!--<img src="../../../assets/images/icon-tick-x/green-tick.png" alt="green tick" class="style-icon-pass-fail">-->
+            <!--<img src="../../../assets/images/icon-tick-x/green_tick.png" alt="green tick" class="style-icon-pass-fail">-->
           </th>
         </tr>
         </tbody>
@@ -434,11 +434,11 @@ export default {
         <tr class="row-note-subject">
           <th class="text-note-subject" colspan="8">
             Môn đã hoặc đang học: <span class="style-icon-studying"></span>
-            Đã đạt: <img src="../../../assets/images/icon-tick-x/green-tick.png"
+            Đã đạt: <img src="../../../assets/images/icon-tick-x/green_tick.png"
                          alt="green tick"
                          class="style-icon-pass-fail resize-icon-pass-fail"
           >
-            Không đạt: <img src="../../../assets/images/icon-tick-x/red-x.png" alt="green tick"
+            Không đạt: <img src="../../../assets/images/icon-tick-x/red_x.png" alt="green tick"
                             class="style-icon-pass-fail resize-icon-pass-fail">
           </th>
         </tr>

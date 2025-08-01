@@ -93,7 +93,7 @@ export default {
         <button class="btn-logout" @click="handleLogout()">Đăng xuất</button>
       </div>
       <div class="card-image">
-        <img src="../../assets/images/avatar-student.png"
+        <img src="../../assets/images/avatar_student.png"
              alt="avatar student"
              class="style-img-ava-student"
         >
