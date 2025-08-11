@@ -184,7 +184,7 @@ export default {
           <tr class="table-header-information-course-to-register">
             <th class="cell-header-information-course-to-register col-info-course-1">STT</th>
             <th class="cell-header-information-course-to-register col-info-course-2">Lịch học</th>
-            <th class="cell-header-information-course-to-register col-info-course-3">Nhóm thực hành
+            <th class="cell-header-information-course-to-register col-info-course-3">Nhóm TH
             </th>
             <th class="cell-header-information-course-to-register col-info-course-4">Phòng</th>
             <th class="cell-header-information-course-to-register col-info-course-5">Cơ sở</th>
@@ -198,7 +198,7 @@ export default {
           <tbody>
           <tr class="row-choose-information-course-to-register">
             <td class="cell-choose-information-course-to-register col-info-course-1">1</td>
-            <td class="cell-choose-information-course-to-register col-info-course-2">LT - Thứ 5
+            <td class="cell-choose-information-course-to-register col-info-course-2">LT - Thứ 2
               (T1-T3)
             </td>
             <td class="cell-choose-information-course-to-register col-info-course-3"></td>
@@ -214,10 +214,9 @@ export default {
             <td class="cell-choose-information-course-to-register col-info-course-9">45</td>
           </tr>
           </tbody>
-          <tfoot>
           <tr class="row-choose-information-course-to-register">
             <td class="cell-choose-information-course-to-register col-info-course-1">2</td>
-            <td class="cell-choose-information-course-to-register col-info-course-2">TH - Thứ 5
+            <td class="cell-choose-information-course-to-register col-info-course-2">TH - Thứ 2
               (T4-T6)
             </td>
             <td class="cell-choose-information-course-to-register col-info-course-3">1</td>
@@ -234,7 +233,7 @@ export default {
           </tr>
           <tr class="row-choose-information-course-to-register">
             <td class="cell-choose-information-course-to-register col-info-course-1">3</td>
-            <td class="cell-choose-information-course-to-register col-info-course-2">TH - Thứ 5
+            <td class="cell-choose-information-course-to-register col-info-course-2">TH - Thứ 2
               (T4-T6)
             </td>
             <td class="cell-choose-information-course-to-register col-info-course-3">2</td>
@@ -247,8 +246,23 @@ export default {
             </td>
             <td class="cell-choose-information-course-to-register col-info-course-8">22</td>
             <td class="cell-choose-information-course-to-register col-info-course-9">22</td>
-
           </tr>
+          <tfoot>
+            <tr class="table-footer-information-course-to-register">
+              <td class="cell-footer-information-course-to-register" colspan="9">
+                <p class="style-text-notice-block">
+                  Nhóm TH: Nhóm thực hành.<br>
+                  Quy định về phòng học ở IUH.<br>
+                  - Cú pháp tên phòng là: (Dãy nhà)+(Tầng).(Số phòng)<br>
+                  - Ví dụ: B2.11 là nhà B, tầng 2, phòng 11.<br>
+                  - Cơ sở Nguyễn Văn Bảo gồm dãy nhà: A, B, C, D, H, V, X. Địa chỉ: Số 12 Nguyễn Văn Bảo, phường 4, quận Gò Vấp.<br>
+                  - Cơ sở Phạm Văn Chiêu gồm dãy nhà: P. Địa chỉ: Số 20 Đường số 53, phường 14, quận Gò Vấp.<br>
+                  - Cơ sở Nguyễn Văn Dung gồm dãy nhà: N, M. Địa chỉ: Số 10 Nguyễn Văn Dung, phường 6, quận Gò Vấp.<br>
+                  - Cơ sở Nhà thiếu nhi: CV. Địa chỉ: Số 27 Đường số 9, phường 16, quận Gò Vấp.<br>
+                  <i>(Địa chỉ trên là địa chỉ trước khi sáp nhập)</i>
+                </p>
+              </td>
+            </tr>
           </tfoot>
         </table>
       </div>
@@ -319,7 +333,7 @@ export default {
           <th class="cell-header-list-courses-registered col-course-registered-4">Tên môn học</th>
           <th class="cell-header-list-courses-registered col-course-registered-5">Lớp học dự kiến</th>
           <th class="cell-header-list-courses-registered col-course-registered-6">Số tín chỉ</th>
-          <th class="cell-header-list-courses-registered col-course-registered-7">Nhóm thực hành</th>
+          <th class="cell-header-list-courses-registered col-course-registered-7">Nhóm TH</th>
           <th class="cell-header-list-courses-registered col-course-registered-8">Học phí</th>
           <th class="cell-header-list-courses-registered col-course-registered-9">Ngày đăng kí</th>
           <th class="cell-header-list-courses-registered col-course-registered-10">Trạng thái lớp học phần</th>
@@ -359,6 +373,7 @@ export default {
           <td class="cell-row-item-course-registered">1</td>
           <td class="cell-row-item-course-registered">4.000.000</td>
           <td class="cell-row-item-course-registered">10/12/2025</td>
+          <!--Status: Đang lên kế hoạch, Chờ sv đăng kí, Chấp nhận mở lớp (có thể chèn), Đã khóa-->
           <td class="cell-row-item-course-registered">Chờ sinh viên đăng ký</td>
           <td class="cell-row-item-course-registered">
             <img src="../../../assets/images/icon-tick-x/red_x.png"
@@ -372,7 +387,7 @@ export default {
           <td colspan="11" class="cell-footer-list-courses-registered">Tổng số tín chỉ đăng kí: 6</td>
         </tr>
         <tr class="row-footer-list-courses-registered">
-          <td colspan="11" class="cell-footer-list-courses-registered">Tổng học phí: 6.000.000</td>
+          <td colspan="11" class="cell-footer-list-courses-registered">Tổng học phí: 6.000.000 VND</td>
         </tr>
         </tfoot>
       </table>

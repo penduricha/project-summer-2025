@@ -36,7 +36,7 @@ export default {
 <template>
   <div class="modal fade"  id="modal-cancel-course-registered" tabindex="-1" aria-labelledby="cancelConfirmModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
-      <div class="modal-content style-div-modal">
+      <div class="modal-content style-div-modal-cancel-course-registered">
         <div class="modal-header text-center style-modal-header">
           <!-- Thay the api field ten mon hoc-->
           <img src="../../../../assets/images/icon-tick-x/exclamation_mark.jpg"

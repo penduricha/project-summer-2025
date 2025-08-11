@@ -8,3 +8,12 @@ Chọn học kì đăng ký
 Học mới
 Học lại
 Học cải thiện
+
+Bạn có chắc chắn muốn hủy môn học không.
+
+Hủy môn
+
+Không hủy môn
+
+Giảng viên
+Thời gian
