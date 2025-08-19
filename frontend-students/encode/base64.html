@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Base 64</title>
+</head>
+<body>
+    <script>
+        // Hàm mã hóa Base64 cho chuỗi Unicode
+        function encodeBase64Unicode(str) {
+            return btoa(unescape(encodeURIComponent(str)));
+        }
+        // Hàm giải mã Base64 cho chuỗi Unicode
+        function decodeBase64Unicode(encodedStr) {
+            return decodeURIComponent(escape(atob(encodedStr)));
+        }
+        // Sử dụng
+        const unicodeId = '1234';
+        const encodedUnicodeId = encodeBase64Unicode(unicodeId);
+        console.log('Mã hóa Base64 Unicode:', encodedUnicodeId);
+
+        const decodedUnicodeId = decodeBase64Unicode(encodedUnicodeId);
+        console.log('Giải mã Base64 Unicode:', decodedUnicodeId);
+    </script>
+</body>
+</html>

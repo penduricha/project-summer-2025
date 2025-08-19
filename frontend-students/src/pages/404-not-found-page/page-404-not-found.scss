@@ -1,13 +1,37 @@
 .section-page-404 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  height: 35rem;
+}
 
+.box-text-404-not-found {
+  height: 100%;
+  width: 75rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 1.25rem;
+  flex-direction: column;
+}
+
+.style-btn-return-from-not-found {
+  width: 12rem;
+  height: 2.75rem;
+  font-size: 17px;
 }
 
 @media only screen and (max-width: 767px) {
-
+  .box-text-404-not-found {
+    width: 23.25rem;
+  }
 }
 
 @media only screen and (min-width: 767px) and (max-width: 1223px) {
-
+  .box-text-404-not-found {
+    width: 38.25rem;
+  }
 }
 
 /* Styles for larger screens */

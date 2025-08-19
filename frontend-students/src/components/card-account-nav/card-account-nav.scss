@@ -51,23 +51,24 @@
 
 .text-card {
   color: white;
-  font-size: 16.5px;
+  font-size: 18px;
   font-weight: 540;
+  font-family: Calibri, serif;
 }
 
 .btn-logout {
-  color: white;
-  background-color: var(--orange-log-out);
-  font-size: 16px;
-  border-radius: 4px;
-  border: none;
+  //color: white;
+  //background-color: var(--orange-log-out);
+  //font-size: 16px;
+  //border-radius: 4px;
+  //border: none;
   height: 2.5rem;
-  cursor: pointer;
+  //cursor: pointer;
 }
 
-.btn-logout:hover {
-  opacity: 0.8;
-}
+//.btn-logout:hover {
+//  opacity: 0.8;
+//}
 
 ul {
   display: flex;

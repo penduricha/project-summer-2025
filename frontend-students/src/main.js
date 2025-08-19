@@ -26,7 +26,10 @@ const vuetify = createVuetify();
 import CanvasJSChart from '@canvasjs/vue-charts';
 import StudentLocalStorage from "@/local-storage/StudentLocalStorage.js";
 import RouterManagement from "@/routers/RouterManagement.js";
-import routers from "@/routers/routers.js";
+// import routers from "@/routers/routers.js";
+import routersBeforeLogin from "@/routers/routers-before-login.js";
+import routersAfterLogin from "@/routers/routers-after-login.js";
+
 
 const app = createApp(App);
 app.use(CanvasJSChart);
@@ -55,8 +58,14 @@ function initPage(routers, routerPath) {
 
 function execute() {
     //duyet ko co field query path
-    let paths = routers.map(router => router.path);
-    console.log('Paths:',paths);
+    const allowedRoutersBeforeLogin = routersBeforeLogin
+        .filter(route => route.allow === true)
+    // .map(route => route.path);
+    // Lấy ra các giá trị path
+    // Lọc các đối tượng có allow === true
+    const allowedRoutersAfterLogin = routersAfterLogin
+        .filter(route => route.allow === true)
+
     const routerManagement = new RouterManagement();
     const studentLocalStorage = new StudentLocalStorage();
     const startPagePath = '/login';
@@ -64,38 +73,123 @@ function execute() {
         routerManagement.getPath_From_LocalStorage() &&
         studentLocalStorage.getStudentID_From_LocalStorage_StudentID();
     const currentPath = window.location.pathname;
+    //currentPath = currentPath.trim().split(' ').join('');
     // Lấy đường dẫn hiện tại
     // if (currentPath === '/') {
     //     // Nếu người dùng gõ đường dẫn chính, điều hướng đến đường dẫn từ LocalStorage
     /* xét thêm trường hợp nếu ko trong list routers thì sẽ navigate trang 404*/
+    /* truong hop tu logout khi treo qua lau */
+   // startExecuteAutomationLogOut(checkPath_And_ID, routerManagement, routers, startPagePath, currentPath);
+    startExecuteNoAutomationLogOut(checkPath_And_ID, routerManagement, allowedRoutersBeforeLogin, allowedRoutersAfterLogin, startPagePath, currentPath);
+}
+
+function startExecuteNoAutomationLogOut(checkPath_And_ID, routerManagement, routersBeforeLogin, routersAfterLogin, startPagePath, currentPath) {
+    //tinh huong khi muon truy lap lại ko phai dang nhap lai.
+    if(checkPath_And_ID) {
+        const isNotInRoutersAfterLogin = routersAfterLogin.every(router => router.path !== currentPath);
+        const path404Page = '/404-not-found';
+        if(isNotInRoutersAfterLogin) {
+            initPage(
+                routersAfterLogin, path404Page
+            );
+        } else {
+            if(currentPath === '/') {
+                initPage(
+                    routersAfterLogin, routerManagement
+                        .getPath_From_LocalStorage()
+                );
+            } else {
+                let pathSession = routerManagement
+                    .getPath_From_SessionStorage();
+                if(currentPath === pathSession) {
+                    initPage(
+                        routersAfterLogin,
+                        pathSession
+                    );
+                } else {
+                    initPage(
+                        routersAfterLogin,
+                        currentPath
+                    );
+                }
+            }
+        }
+    } else{
+        //ko co dang nhap vao trang login
+        const isNotInRoutersBeforeLogin = routersBeforeLogin.every(router => router.path !== currentPath);
+        const path404Page = '/404-not-found';
+        if(isNotInRoutersBeforeLogin) {
+            initPage(
+                routersAfterLogin, path404Page
+            );
+        } else {
+            if(currentPath === '/') {
+                initPage(
+                    routersBeforeLogin,
+                    startPagePath
+                );
+            } else {
+                let pathSession = routerManagement
+                    .getPath_From_SessionStorage();
+                if(currentPath === pathSession) {
+                    initPage(
+                        routersBeforeLogin,
+                        pathSession
+                    );
+                } else {
+                    initPage(
+                        routersBeforeLogin,
+                        currentPath
+                    );
+                }
+            }
+        }
+    }
+}
+
+function startExecuteAutomationLogOut(checkPath_And_ID, routerManagement, routersBeforeLogin, routersAfterLogin, startPagePath, currentPath) {
     if (checkPath_And_ID && !routerManagement.getPath_From_SessionStorage()) {
         // Nếu có path từ LocalStorage và không có path từ SessionStorage
         // Điều hướng đến đường dẫn người dùng gõ
         if(currentPath === '/') {
-            initPage(routers, routerManagement.getPath_From_LocalStorage());
+            initPage(routersAfterLogin, routerManagement.getPath_From_LocalStorage());
         } else {
-            initPage(routers, currentPath);
+            initPage(routersAfterLogin, currentPath);
             //duyet ds routers neu ko co thi navigate den trang 404
         }
     } else {
-        if (!routerManagement.getPath_From_SessionStorage()) {
-            initPage(routers, startPagePath);
+        let pathSession = routerManagement.getPath_From_SessionStorage();
+        if(currentPath !== pathSession) {
+            routerManagement.removePath_From_LocalStorage(pathSession);
+            initPage(
+                routersBeforeLogin,
+                currentPath
+            );
         } else {
-            //viet them truong hop khi nguoi dung go
-            let pathSession = routerManagement.getPath_From_SessionStorage();
-            if(currentPath !== pathSession) {
-                routerManagement.removePath_From_LocalStorage(pathSession);
-                initPage(
-                    routers,
-                    currentPath
-                );
-            } else {
-                initPage(
-                    routers,
-                    pathSession
-                );
-            }
+            initPage(
+                routersBeforeLogin,
+                pathSession
+            );
         }
+        // if (!routerManagement.getPath_From_SessionStorage()) {
+        //     //truong hop tu logout khi treo qua lau
+        //     initPage(routersBeforeLogin, startPagePath);
+        // } else {
+        //     //viet them truong hop khi nguoi dung go
+        //     let pathSession = routerManagement.getPath_From_SessionStorage();
+        //     if(currentPath !== pathSession) {
+        //         routerManagement.removePath_From_LocalStorage(pathSession);
+        //         initPage(
+        //             routersBeforeLogin,
+        //             currentPath
+        //         );
+        //     } else {
+        //         initPage(
+        //             routersBeforeLogin,
+        //             pathSession
+        //         );
+        //     }
+        // }
     }
 }
 

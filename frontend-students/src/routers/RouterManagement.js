@@ -38,12 +38,21 @@ export default class RouterManagement {
     //other functions local-storage,
     //session storages
     //save path to local-storage
-    removePath_From_LocalStorage(routerPath){
+    removePath_From_LocalStorage(){
         //Khi chuyển trang khác, path được save vào session.
         if(this.getPath_From_LocalStorage()) {
             localStorage.removeItem(this.getVariableRouterPathLocalStorage());
         } else {
             console.error('Local storage not found.');
+        }
+    }
+
+    removePath_From_SessionStorage(){
+        //Khi chuyển trang khác, path được save vào session.
+        if(this.getPath_From_SessionStorage()) {
+            sessionStorage.removeItem(this.getVariableRouterPathSession());
+        } else {
+            console.error('Session storage not found.');
         }
     }
 

@@ -15,6 +15,12 @@ export default {
     TableListCourses,
   },
 
+  // props: {
+  //   courseID: {
+  //     type: Number,
+  //   }
+  // },
+
   data() {
     return  {
 

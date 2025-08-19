@@ -10,16 +10,20 @@ import ModalConfirmCancelCourseRegistered
   from "@/pages/register-courses-page/section-register-courses/modal-confirm-cancel-course-registered/ModalConfirmCancelCourseRegistered.vue";
 import ModalViewDetailCourseRegistered
   from "@/pages/register-courses-page/section-register-courses/modal-view-detail-course-registered/ModalViewDetailCourseRegistered.vue";
+import ButtonOrange from "@/components/button/button-orange/ButtonOrange.vue";
 
 export default {
   name: "SectionRegisterCourses",
-  components: {ModalViewDetailCourseRegistered, ModalConfirmCancelCourseRegistered},
+  components: {ButtonOrange, ModalViewDetailCourseRegistered, ModalConfirmCancelCourseRegistered},
 
   data() {
     return {
       semesterRegister: 'Học kỳ 1 2025-2026',
       optionChooseStatusCourse: 'Học mới',
       groupPractice: 1,
+
+      //btn dang ki
+      textBtnRegister: 'Đăng kí môn học',
     }
   },
 
@@ -213,7 +217,6 @@ export default {
             <td class="cell-choose-information-course-to-register col-info-course-8">45</td>
             <td class="cell-choose-information-course-to-register col-info-course-9">45</td>
           </tr>
-          </tbody>
           <tr class="row-choose-information-course-to-register">
             <td class="cell-choose-information-course-to-register col-info-course-1">2</td>
             <td class="cell-choose-information-course-to-register col-info-course-2">TH - Thứ 2
@@ -247,6 +250,7 @@ export default {
             <td class="cell-choose-information-course-to-register col-info-course-8">22</td>
             <td class="cell-choose-information-course-to-register col-info-course-9">22</td>
           </tr>
+          </tbody>
           <tfoot>
             <tr class="table-footer-information-course-to-register">
               <td class="cell-footer-information-course-to-register" colspan="9">
@@ -266,54 +270,59 @@ export default {
           </tfoot>
         </table>
       </div>
-      <button class="style-button-register btn-register-allow">
-        <!-- btn-register-disable or btn-register-allow-->
-        Đăng kí môn học
-      </button>
+<!--      <button class="style-button-register btn-register-allow">-->
+<!--        &lt;!&ndash; btn-register-disable or btn-register-allow&ndash;&gt;-->
+<!--        Đăng kí môn học-->
+<!--      </button>-->
+      <ButtonOrange :disable-button="false"
+                    :loading-button="false"
+                    :text-button="textBtnRegister"
+                    class="style-button-register btn-register-allow"
+      />
     </div>
     <div class="view-list-courses-registered">
       <span class="text-title-to-register">LỚP HỌC PHẦN ĐÃ ĐĂNG KÝ</span>
-      <div class="box-btn-print-courses-registered">
-        <button class="btn-print-courses-registered">
-          <svg fill="white" height="100px" width="100px" id="Layer_1"
-               class="style-svg-printer"
-               xmlns="http://www.w3.org/2000/svg"
-               viewBox="0 0 512 512" xml:space="preserve">
-                            <g>
-                                <g>
-                                    <path d="M495.304,144.696h-83.478v-128C411.826,7.475,404.351,0,395.13,0H116.87c-9.22,0-16.696,7.475-16.696,16.696v128H16.696
-                                        C7.475,144.696,0,152.171,0,161.391V395.13c0,9.22,7.475,16.696,16.696,16.696h83.478v83.478c0,9.22,7.475,16.696,16.696,16.696
-                                        H395.13c9.22,0,16.696-7.475,16.696-16.696v-83.478h83.478c9.22,0,16.696-7.475,16.696-16.696V161.391
-                                        C512,152.171,504.525,144.696,495.304,144.696z M133.565,33.391h244.87v111.304h-244.87V33.391z M378.435,478.609h-244.87V311.652
-                                        h244.87V478.609z M478.609,378.435h-66.783v-83.478c0-9.22-7.475-16.696-16.696-16.696H116.87c-9.22,0-16.696,7.475-16.696,16.696
-                                        v83.478H33.391V178.087h83.478H395.13h83.478V378.435z"/>
-                                </g>
-                            </g>
-            <g>
-                                <g>
-                                    <path d="M329.461,346.156H184.765c-9.22,0-16.696,7.475-16.696,16.696s7.475,16.696,16.696,16.696h144.696
-			                            c9.22,0,16.696-7.475,16.696-16.696S338.681,346.156,329.461,346.156z"/>
-                                </g>
-                            </g>
-            <g>
-                                <g>
-                                    <path d="M262.678,412.939h-77.913c-9.22,0-16.696,7.475-16.696,16.696s7.475,16.696,16.696,16.696h77.913
-			                            c9.22,0,16.696-7.475,16.696-16.696S271.899,412.939,262.678,412.939z"/>
-                                </g>
-                            </g>
-            <g>
-                                <g>
-                                    <circle cx="362.852" cy="229.287" r="16.696"/>
-                                </g>
-                            </g>
-            <g>
-                                <g>
-                                    <circle cx="429.635" cy="229.287" r="16.696"/>
-                                </g>
-                            </g>
-                        </svg>
-        </button>
-      </div>
+<!--      <div class="box-btn-print-courses-registered">-->
+<!--        <button class="btn-print-courses-registered">-->
+<!--          <svg fill="white" height="100px" width="100px" id="Layer_1"-->
+<!--               class="style-svg-printer"-->
+<!--               xmlns="http://www.w3.org/2000/svg"-->
+<!--               viewBox="0 0 512 512" xml:space="preserve">-->
+<!--                            <g>-->
+<!--                                <g>-->
+<!--                                    <path d="M495.304,144.696h-83.478v-128C411.826,7.475,404.351,0,395.13,0H116.87c-9.22,0-16.696,7.475-16.696,16.696v128H16.696-->
+<!--                                        C7.475,144.696,0,152.171,0,161.391V395.13c0,9.22,7.475,16.696,16.696,16.696h83.478v83.478c0,9.22,7.475,16.696,16.696,16.696-->
+<!--                                        H395.13c9.22,0,16.696-7.475,16.696-16.696v-83.478h83.478c9.22,0,16.696-7.475,16.696-16.696V161.391-->
+<!--                                        C512,152.171,504.525,144.696,495.304,144.696z M133.565,33.391h244.87v111.304h-244.87V33.391z M378.435,478.609h-244.87V311.652-->
+<!--                                        h244.87V478.609z M478.609,378.435h-66.783v-83.478c0-9.22-7.475-16.696-16.696-16.696H116.87c-9.22,0-16.696,7.475-16.696,16.696-->
+<!--                                        v83.478H33.391V178.087h83.478H395.13h83.478V378.435z"/>-->
+<!--                                </g>-->
+<!--                            </g>-->
+<!--            <g>-->
+<!--                                <g>-->
+<!--                                    <path d="M329.461,346.156H184.765c-9.22,0-16.696,7.475-16.696,16.696s7.475,16.696,16.696,16.696h144.696-->
+<!--			                            c9.22,0,16.696-7.475,16.696-16.696S338.681,346.156,329.461,346.156z"/>-->
+<!--                                </g>-->
+<!--                            </g>-->
+<!--            <g>-->
+<!--                                <g>-->
+<!--                                    <path d="M262.678,412.939h-77.913c-9.22,0-16.696,7.475-16.696,16.696s7.475,16.696,16.696,16.696h77.913-->
+<!--			                            c9.22,0,16.696-7.475,16.696-16.696S271.899,412.939,262.678,412.939z"/>-->
+<!--                                </g>-->
+<!--                            </g>-->
+<!--            <g>-->
+<!--                                <g>-->
+<!--                                    <circle cx="362.852" cy="229.287" r="16.696"/>-->
+<!--                                </g>-->
+<!--                            </g>-->
+<!--            <g>-->
+<!--                                <g>-->
+<!--                                    <circle cx="429.635" cy="229.287" r="16.696"/>-->
+<!--                                </g>-->
+<!--                            </g>-->
+<!--                        </svg>-->
+<!--        </button>-->
+<!--      </div>-->
       <!--      <div class="dropdown">-->
       <!--        <button class="btn btn-secondary dropdown-toggle dropdown-menu-lg-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">-->
       <!--          Dropdown button-->
@@ -378,7 +387,8 @@ export default {
           <td class="cell-row-item-course-registered">
             <img src="../../../assets/images/icon-tick-x/red_x.png"
                  alt="img x-tick"
-                 class="img-tick-x-fee">
+                 class="img-tick-x-fee"
+            >
           </td>
         </tr>
         </tbody>

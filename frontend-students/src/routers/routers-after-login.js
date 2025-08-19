@@ -7,9 +7,9 @@ import Page404NotFound from "@/pages/404-not-found-page/Page404NotFound.vue";
 
 const routers = [
     // '/' khi init trang, prop param de truyen tham so.
-    { path: '/', component: LoginPage, allow: true},
+    { path: '/', component: InformationPage, allow: true},
     { path: '/login', component: LoginPage, allow: false},
-    { path: '/register-courses', component: RegisterCourses, allow: true },
+    { path: '/register-courses', component: RegisterCourses, allow: true},
     { path: '/information-student', component: InformationPage, allow: true},
     { path: '/list-courses', component: ListCourses, allow: true},
     { path: '/404-not-found', component: Page404NotFound, allow: true},
