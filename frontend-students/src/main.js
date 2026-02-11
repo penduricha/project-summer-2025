@@ -72,6 +72,7 @@ function execute() {
     const checkPath_And_ID =
         routerManagement.getPath_From_LocalStorage() &&
         studentLocalStorage.getStudentID_From_LocalStorage_StudentID();
+    //người dùng gõ path
     const currentPath = window.location.pathname;
     //currentPath = currentPath.trim().split(' ').join('');
     // Lấy đường dẫn hiện tại
@@ -79,8 +80,13 @@ function execute() {
     //     // Nếu người dùng gõ đường dẫn chính, điều hướng đến đường dẫn từ LocalStorage
     /* xét thêm trường hợp nếu ko trong list routers thì sẽ navigate trang 404*/
     /* truong hop tu logout khi treo qua lau */
-   // startExecuteAutomationLogOut(checkPath_And_ID, routerManagement, routers, startPagePath, currentPath);
-    startExecuteNoAutomationLogOut(checkPath_And_ID, routerManagement, allowedRoutersBeforeLogin, allowedRoutersAfterLogin, startPagePath, currentPath);
+    startExecuteNoAutomationLogOut(checkPath_And_ID,
+        routerManagement,
+        allowedRoutersBeforeLogin,
+        allowedRoutersAfterLogin,
+        startPagePath,
+        currentPath
+    );
 }
 
 function startExecuteNoAutomationLogOut(checkPath_And_ID, routerManagement, routersBeforeLogin, routersAfterLogin, startPagePath, currentPath) {

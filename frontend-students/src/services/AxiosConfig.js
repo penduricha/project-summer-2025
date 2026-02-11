@@ -11,7 +11,7 @@ export default class AxiosConfig {
             baseURL: `http://localhost:${port}/api`,
             headers: {
                 'Content-Type': 'application/json',
-                // Thiết lập header Authorization
+                // Set header Authorization if there are securities
             }
         });
     }

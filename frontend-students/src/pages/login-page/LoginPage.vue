@@ -1,5 +1,6 @@
 <script>
 import './login-page.scss';
+import './form-event.scss';
 import '@/assets/main-scss/theme-color.scss';
 import RouterManagement from "@/routers/RouterManagement.js";
 import ButtonBlue from "@/components/button/button-blue/ButtonBlue.vue";
@@ -46,6 +47,9 @@ export default {
       loadingButtonLogin: false,
       textButtonLogin: 'Đăng nhập',
       disableButtonLogin: false,
+
+      //event form
+      disableFormLogin: false,
     }
   },
 
@@ -125,12 +129,14 @@ export default {
       this.loadingButtonLogin = true;
       this.disableButtonLogin = true;
       this.textButtonLogin = null;
+      this.disableFormLogin = true;
     },
 
     stopLoadButtonLogin() {
       this.loadingButtonLogin = false;
       this.disableButtonLogin = false;
       this.textButtonLogin = 'Đăng nhập';
+      this.disableFormLogin = false;
     },
 
     async handleLoginEvent() {
@@ -216,6 +222,9 @@ export default {
     //         : 'border-no-choose';
     //   };
     // },
+    setDisableForm() {
+      return (this.disableFormLogin) ? 'disabled' : 'allow';
+    }
   },
 }
 </script>
@@ -223,9 +232,9 @@ export default {
 <template>
   <Header/>
   <div class="container-form-login-page">
-    <div class="form-login">
+    <div class="form-login" :class="['event-form-login', setDisableForm]">
       <h4 class="title-login">Đăng nhập hệ thống</h4>
-      <div class="form-floating mb-3 style-input-login">
+      <div class="form-floating mb-3 style-input-login" >
         <input type="text" class="form-control"
                id="floatingInputStudentID"
                placeholder="Mã sinh viên (nhập số)"
@@ -235,7 +244,6 @@ export default {
         >
         <label for="floatingInputStudentID">Mã sinh viên (nhập số)</label>
       </div>
-
       <div class="form-floating mb-3 style-input-login">
         <input type="password"
                class="form-control"

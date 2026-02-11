@@ -4,6 +4,8 @@ import Header from "@/components/header/Header.vue";
 import './page-404-not-found.scss';
 import RouterManagement from "@/routers/RouterManagement.js";
 import ButtonOrange from "@/components/button/button-orange/ButtonOrange.vue";
+import StudentLocalStorage from "@/local-storage/StudentLocalStorage.js";
+
 export default {
   name: "Page404NotFound",
 
@@ -43,18 +45,53 @@ export default {
     },
 
     handleReturnFrom404Page() {
-      const pathReturn = '/';
-      this.$router.replace({ path: pathReturn })
-          .catch((error) => {
-            console.error('Error navigating:', error);
-            alert(error);
-          });
+      //Cach 1
+      //const pathReturn = '/';
+      // Delay the reload to ensure the navigation is completed
+      // Adjust the timeout as needed
+      // this.$router.replace({path: pathReturn}).then(() => {
+      //       setTimeout(() => {
+      //         window.location.reload();
+      //       }, 0.5);
+      //     })
+      //     .catch((error) => {
+      //       console.error('Error navigating:', error);
+      //       alert(error);
+      //     });
+      //Cach 2
+      const routerManagement = new RouterManagement();
+      const studentLocalStorage = new StudentLocalStorage();
+      const checkPath_And_ID =
+          routerManagement.getPath_From_LocalStorage() &&
+          studentLocalStorage.getStudentID_From_LocalStorage_StudentID();
+      if(checkPath_And_ID) {
+        const pathReturn = '/information-student';
+        this.$router.replace({path: pathReturn}).then(() => {
+                setTimeout(() => {
+                  window.location.reload();
+                }, 10);
+              })
+              .catch((error) => {
+                console.error('Error navigating:', error);
+                alert(error);
+              });
+      } else {
+        const pathReturn = '/login';
+        this.$router.replace({path: pathReturn}).then(() => {
+              setTimeout(() => {
+                window.location.reload();
+              }, 10);
+            })
+            .catch((error) => {
+              console.error('Error navigating:', error);
+              alert(error);
+            });
+      }
+
     }
   },
 
-  computed: {
-
-  },
+  computed: {},
 }
 </script>
 

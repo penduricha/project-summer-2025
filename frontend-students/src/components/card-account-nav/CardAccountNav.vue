@@ -83,6 +83,18 @@ export default {
         console.error('Error navigating :', error);
         alert(error);
       });
+    },
+
+    handleNavigateUniversitySchedule() {
+      const path = '/university-schedule';
+      this.$router.replace({
+        path: path,
+        // query: {
+        // }
+      }).catch((error) => {
+        console.error('Error navigating :', error);
+        alert(error);
+      });
     }
   },
 
@@ -132,7 +144,9 @@ export default {
           >Chương trình khung</a>
         </li>
         <li>
-          <a href="" class="text-nav">Lịch học</a>
+          <a href="" class="text-nav"
+             @click.prevent="handleNavigateUniversitySchedule()"
+          >Lịch học</a>
         </li>
         <li>
           <a href="" class="text-nav">Học phí</a>

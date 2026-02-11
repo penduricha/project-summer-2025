@@ -51,9 +51,9 @@
 
 .text-card {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 540;
-  font-family: Calibri, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn-logout {
@@ -87,6 +87,7 @@ ul {
   text-decoration: underline;
 }
 
+//mobile
 @media only screen and (max-width: 767px) {
   .div-account-nav {
     flex-direction: column;
@@ -110,6 +111,7 @@ ul {
   }
 }
 
+//tablet
 @media only screen and (min-width: 767px) and (max-width: 1223px) {
   .div-account-nav {
     flex-direction: column;

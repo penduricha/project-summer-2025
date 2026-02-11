@@ -3,6 +3,7 @@ import RegisterCourses from "@/pages/register-courses-page/RegisterCourses.vue";
 import InformationPage from "@/pages/information-page/InformationPage.vue";
 import ListCourses from "@/pages/list-courses/ListCourses.vue";
 import Page404NotFound from "@/pages/404-not-found-page/Page404NotFound.vue";
+import UniversitySchedule from "@/pages/university-schedule/UniversitySchedule.vue";
 
 
 const routers = [
@@ -13,6 +14,7 @@ const routers = [
     { path: '/information-student', component: InformationPage, allow: false},
     { path: '/list-courses', component: ListCourses, allow: false},
     { path: '/404-not-found', component: Page404NotFound, allow: true},
+    { path: '/university-schedule', component: UniversitySchedule, allow: false},
 ];
 export default routers;
 /*
