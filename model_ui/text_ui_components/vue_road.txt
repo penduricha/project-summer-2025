@@ -1,0 +1,12 @@
+Week 1:
+- Create components basic and cut components.
+- Use vue router to manage path.
+- Use props to refer parameters.
+- Reviews all method about Array, Object, Map.
+- Reviews string methods and regex string.
+Week 2:
+- Use scss or sass to event UX. Management files scss to import. Use function computed.
+- Local storage and session storage. (differ)
+- Reviews setInterval and setTimeout. (differ)
+- Resolve function when page is executed loading.
+- Call method Get post put del patch options.
