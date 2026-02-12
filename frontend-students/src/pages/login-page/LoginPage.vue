@@ -7,7 +7,7 @@ import ButtonBlue from "@/components/button/button-blue/ButtonBlue.vue";
 import TextInvalid from "@/components/span/TextInvalid.vue";
 import PasswordManagement from "@/manage-data/PasswordManagement.js";
 import StudentLocalStorage from "@/local-storage/StudentLocalStorage.js";
-import {StudentAccount} from "@/models/StudentAccount.js";
+import { StudentAccount } from "@/models/StudentAccount.js";
 import StudentDao from "@/daos/StudentDao.js";
 import Footer from "@/components/footer/Footer.vue";
 import Header from "@/components/header/Header.vue";
@@ -40,7 +40,7 @@ export default {
     return {
       studentID: null,
       password: null,
-      validateLogin: null,
+      validateLogin: "",
       rememberMe: false,
 
       //btn login
@@ -94,7 +94,7 @@ export default {
 
     async fetchAccountStudent(studentID, password) {
       return await StudentDao
-          .getStudentIDAndPassword(studentID, password);
+        .getStudentIDAndPassword(studentID, password);
 
     },
 
@@ -145,25 +145,32 @@ export default {
         this.validateLogin = 'Vui lòng nhập đầy đủ thông tin.';
       } else {
         this.loadButtonLogin();
+
         const passwordManagement = new PasswordManagement(this.password.trim());
         let passwordHashed = await passwordManagement.sha512Hash();
-        let studentFetched = await this.fetchAccountStudent(
-            this.studentID.trim(),
-            passwordHashed);
+        console.log('Password hashed:', passwordHashed);
+
+        let studentFetched = await this.fetchAccountStudent(this.studentID.trim());
+        console.log('Student fetched:', studentFetched);
+
         if (!studentFetched) {
           this.validateLogin = 'Mã số sinh viên hoặc mật khẩu không đúng.';
           this.stopLoadButtonLogin();
         } else {
-          //save remember me
-          this.validateLogin = null;
-          if (this.rememberMe === true) {
-            this.saveDataInputToLocalStorage();
+          if (studentFetched.password !== passwordHashed) {
+            this.validateLogin = 'Mã số sinh viên hoặc mật khẩu không đúng.';
           } else {
-            this.removeDataInputFromLocalStorage();
+            //save remember me
+            this.validateLogin = null;
+            if (this.rememberMe === true) {
+              this.saveDataInputToLocalStorage();
+            } else {
+              this.removeDataInputFromLocalStorage();
+            }
+            //save student id to local storage
+            console.log('Login successfully');
+            this.navigateToRegisterCoursesPage();
           }
-          //save student id to local storage
-          console.log('Login successfully');
-          this.navigateToRegisterCoursesPage();
           this.stopLoadButtonLogin();
         }
       }
@@ -180,8 +187,8 @@ export default {
       if (this.studentID && this.password) {
         const studentLocalStorage = new StudentLocalStorage();
         studentLocalStorage.saveLocalStorageRememberMe(
-            this.studentID.trim(),
-            this.password.trim());
+          this.studentID.trim(),
+          this.password.trim());
       }
     },
 
@@ -190,11 +197,11 @@ export default {
       /* neu tru thi set input*/
       const studentLocalStorage = new StudentLocalStorage();
       let studentFetched = studentLocalStorage
-          .getLocalStorageRememberMe();
+        .getLocalStorageRememberMe();
       console.log('Student fetched from local storage remember me:', studentFetched);
       if (!studentFetched || (
-          typeof studentFetched === 'object'
-          && Object.keys(studentFetched).length === 0)) {
+        typeof studentFetched === 'object'
+        && Object.keys(studentFetched).length === 0)) {
         this.rememberMe = false;
       } else {
         this.rememberMe = true;
@@ -230,55 +237,32 @@ export default {
 </script>
 
 <template>
-  <Header/>
+  <Header />
   <div class="container-form-login-page">
     <div class="form-login" :class="['event-form-login', setDisableForm]">
       <h4 class="title-login">Đăng nhập hệ thống</h4>
-      <div class="form-floating mb-3 style-input-login" >
-        <input type="text" class="form-control"
-               id="floatingInputStudentID"
-               placeholder="Mã sinh viên (nhập số)"
-               @input="setInputStudentID"
-               v-model="studentID"
-               maxlength="10"
-        >
+      <div class="form-floating mb-3 style-input-login">
+        <input type="text" class="form-control" id="floatingInputStudentID" placeholder="Mã sinh viên (nhập số)"
+          @input="setInputStudentID" v-model="studentID" maxlength="10">
         <label for="floatingInputStudentID">Mã sinh viên (nhập số)</label>
       </div>
       <div class="form-floating mb-3 style-input-login">
-        <input type="password"
-               class="form-control"
-               id="floatingInputPassword"
-               placeholder="Mật khẩu"
-               @input="setInputPassword"
-               v-model="password"
-               @paste="preventPaste($event)"
-               maxlength="20"
-        >
+        <input type="password" class="form-control" id="floatingInputPassword" placeholder="Mật khẩu"
+          @input="setInputPassword" v-model="password" @paste="preventPaste($event)" maxlength="20">
         <label for="floatingInputPassword">Mật khẩu</label>
       </div>
-      <TextInvalid :text-span="validateLogin"/>
+      <TextInvalid :text-span="validateLogin" />
       <div class="box-remember-me">
-        <input
-            type="checkbox"
-            id="rememberMe"
-            v-model="rememberMe"
-            @change="saveDataInputToLocalStorage()"
-            class="style-checkbox"
-        />
+        <input type="checkbox" id="rememberMe" v-model="rememberMe" @change="saveDataInputToLocalStorage()"
+          class="style-checkbox" />
         <span>Ghi nhớ đăng nhập</span>
       </div>
 
-      <ButtonBlue class="btn-login" @click="handleLoginEvent()"
-                  :text-button="textButtonLogin"
-                  :loading-button="loadingButtonLogin"
-                  :disable-button="disableButtonLogin"
-
-      />
+      <ButtonBlue class="btn-login" @click="handleLoginEvent()" :text-button="textButtonLogin"
+        :loading-button="loadingButtonLogin" :disable-button="disableButtonLogin" />
     </div>
   </div>
-  <Footer/>
+  <Footer />
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
