@@ -237,32 +237,41 @@ export default {
 </script>
 
 <template>
-  <Header />
-  <div class="container-form-login-page">
-    <div class="form-login" :class="['event-form-login', setDisableForm]">
-      <h4 class="title-login">Đăng nhập hệ thống</h4>
-      <div class="form-floating mb-3 style-input-login">
-        <input type="text" class="form-control" id="floatingInputStudentID" placeholder="Mã sinh viên (nhập số)"
-          @input="setInputStudentID" v-model="studentID" maxlength="10">
-        <label for="floatingInputStudentID">Mã sinh viên (nhập số)</label>
-      </div>
-      <div class="form-floating mb-3 style-input-login">
-        <input type="password" class="form-control" id="floatingInputPassword" placeholder="Mật khẩu"
-          @input="setInputPassword" v-model="password" @paste="preventPaste($event)" maxlength="20">
-        <label for="floatingInputPassword">Mật khẩu</label>
-      </div>
-      <TextInvalid :text-span="validateLogin" />
-      <div class="box-remember-me">
-        <input type="checkbox" id="rememberMe" v-model="rememberMe" @change="saveDataInputToLocalStorage()"
-          class="style-checkbox" />
-        <span>Ghi nhớ đăng nhập</span>
-      </div>
+  <div class="container-page-login">
+    <Header />
+    <section class="container-form-login-page">
+      <div class="form-login" :class="['event-form-login', setDisableForm]">
+        <h4 class="title-login">Đăng nhập hệ thống</h4>
+        <div class="form-floating mb-3 style-input-login">
+          <input type="text" class="form-control" id="floatingInputStudentID" placeholder="Mã sinh viên (nhập số)"
+            @input="setInputStudentID" v-model="studentID" maxlength="10">
+          <label for="floatingInputStudentID">Mã sinh viên (nhập số)</label>
+        </div>
+        <div class="form-floating mb-3 style-input-login">
+          <input type="password" class="form-control" id="floatingInputPassword" placeholder="Mật khẩu"
+            @input="setInputPassword" v-model="password" @paste="preventPaste($event)" maxlength="20">
+          <label for="floatingInputPassword">Mật khẩu</label>
+        </div>
+        <TextInvalid :text-span="validateLogin" />
+        <div class="box-remember-me">
+          <input type="checkbox" id="rememberMe" v-model="rememberMe" @change="saveDataInputToLocalStorage()"
+            class="style-checkbox" />
+          <span>Ghi nhớ đăng nhập</span>
+        </div>
 
-      <ButtonBlue class="btn-login" @click="handleLoginEvent()" :text-button="textButtonLogin"
-        :loading-button="loadingButtonLogin" :disable-button="disableButtonLogin" />
-    </div>
+        <ButtonBlue class="btn-login" @click="handleLoginEvent()" :text-button="textButtonLogin"
+          :loading-button="loadingButtonLogin" :disable-button="disableButtonLogin" />
+      </div>
+    </section>
+    <Footer/>
   </div>
-  <Footer />
+
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+// .container-page-login {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+</style>
